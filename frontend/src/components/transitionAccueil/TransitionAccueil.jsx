@@ -1,6 +1,6 @@
 import React from "react";
 import "./TransitionAccueil.css";
-import image from "../../logo.png";
+import image from "../../assets/logo.png";
 
 function TransitionAccueil() {
   return (

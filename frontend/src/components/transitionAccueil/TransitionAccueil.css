@@ -1,0 +1,24 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo {
+  animation: fondu 3s ease-in-out;
+}
+
+@keyframes fondu {
+  from {
+    transform: scale(0.7);
+    filter: blur(5px);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
