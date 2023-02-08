@@ -6,3 +6,9 @@
   text-decoration: none;
   background-color: black;
 }
+
+:root {
+  --background-color: black;
+  --primary-color: #fcd24f;
+  --second-color: white;
+}

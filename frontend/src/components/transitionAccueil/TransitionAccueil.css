@@ -10,7 +10,7 @@
 
   .logo {
     width: 60%;
-    margin-top: 15vh;
+    margin-top: 20vh;
     animation: fondu 3s ease-in-out;
   }
 
@@ -41,7 +41,7 @@
 
   .logo {
     width: 40%;
-    margin-top: 20vh;
+    margin-top: 8vh;
     animation: fondu 3s ease-in-out;
   }
 
