@@ -1,0 +1,15 @@
+.button-wish {
+  color: rgb(0, 0, 0);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  padding: 10px;
+  border: 0;
+  border-radius: 2px;
+}
+
+.wish-description {
+  background-color: var(--primary-color);
+  color: black;
+  text-transform: uppercase;
+  font-style: italic;
+}
