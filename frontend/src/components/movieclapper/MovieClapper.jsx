@@ -3,7 +3,7 @@ import movieclapperloading from "../../assets/movieclapperloading.mp4";
 
 function MovieClapper() {
   return (
-    <div className="movie-clapper-container">
+    <div className="clapper-container">
       <video
         className="movie-clapper-animation"
         src={movieclapperloading}
