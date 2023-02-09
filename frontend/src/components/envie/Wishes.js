@@ -26,7 +26,7 @@ const wishesArray = [
   },
   {
     name: "Transporté",
-    desc: "J'ai envie d'être transporté hors du temps !",
+    desc: "J'ai envie d'être transporté !",
     id: 6,
   },
 ];

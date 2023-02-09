@@ -6,7 +6,7 @@ import Wish from "../../components/envie/Wish";
 function PageWish() {
   return (
     <section className="page-wishes">
-      <h2 className="wish-title">Que voulez vous ressentir ?</h2>
+      <h2 className="wish-title">Que voulez-vous ressentir ?</h2>
       <div className="wishes-full">
         {wishesArray.map((item) => (
           <Wish key={item.id} wish={item} />
