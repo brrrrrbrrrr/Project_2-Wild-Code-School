@@ -1,12 +1,10 @@
-import PageWish from "./pages/pagewish/PageWish";
-// import Home from "./pages/Home";
+import Loading from "./pages/Loading";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
-      <PageWish />
+      <Loading />
     </div>
   );
 }
