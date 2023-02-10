@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,900;1,400;1,900&display=swap");
 
 :root {
-  --margin-button: 0px 10px;
+  --margin-button: 0px 20px;
+  --margin-title: 0px 30px;
 }
 
 .wish-title {
@@ -16,6 +17,7 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  margin: var(--margin-title);
 }
 
 .page-wishes {

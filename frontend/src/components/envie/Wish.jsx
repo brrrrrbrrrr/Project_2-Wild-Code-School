@@ -5,6 +5,7 @@ import "./Wish.css";
 function Wish({ wish }) {
   return (
     // Permet d'affecter une class a chaque ID de mon tableau//
+
     <article className={`div${wish.id}`}>
       <button className="button-wish" type="button">
         <h3 className="wish-description">{wish.desc}</h3>
