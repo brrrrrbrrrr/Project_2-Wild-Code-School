@@ -1,10 +1,10 @@
-import Loading from "./pages/Loading";
+import Navbar from "./components/navbar/Navbar";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Loading />
+      <Navbar />
     </div>
   );
 }
