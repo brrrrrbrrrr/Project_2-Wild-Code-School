@@ -18,6 +18,7 @@ import "./PageFilm.css";
 const url = import.meta.env.VITE_FRONT_URL;
 const key = import.meta.env.VITE_API_KEY;
 const urlApi = `${url}?key=${key}`;
+
 export default function PageFilm() {
   const [movies, setMovies] = useState([]);
 
@@ -33,22 +34,47 @@ export default function PageFilm() {
   }, []);
 
   return (
-    <Swiper
-      slidesPerView={3}
-      spaceBetween={30}
-      pagination={{
-        clickable: true,
-      }}
-      className="mySwiper"
-    >
-      {movies.map((item) => (
-        <SwiperSlide key={item.id} Swiperslide={item}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-            alt=""
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="carousels-container">
+      <div className="first-carousel">
+        <h1 className="genre-title">Genre</h1>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          className="mySwiper"
+        >
+          {movies.map((item) => (
+            <SwiperSlide key={item.id} swiperslide={item}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                alt=""
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="second-carousel">
+        <h1 className="genre-title">Genre</h1>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          className="mySwiper"
+        >
+          {movies.map((item) => (
+            <SwiperSlide key={item.id} swiperslide={item}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                alt=""
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
   );
 }
