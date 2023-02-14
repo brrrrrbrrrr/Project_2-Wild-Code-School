@@ -1,81 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; // ignored
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
+
+// Import Swiper styles
+// eslint-disable-next-line import/no-unresolved
+import "swiper/css";
+// eslint-disable-next-line import/no-unresolved
+import "swiper/css/pagination";
+
 import "./PageFilm.css";
 
-// import "swiper/css";
-// import "swiper/css/effect-coverflow";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+// import required modules
+// import { Pagination } from "swiper";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
+const url = import.meta.env.VITE_FRONT_URL;
+const key = import.meta.env.VITE_API_KEY;
+const urlApi = `${url}?key=${key}`;
+export default function PageFilm() {
+  const [movies, setMovies] = useState([]);
 
-import slideImage1 from "../../assets/images/img_1.jpg";
-import slideImage2 from "../../assets/images/img_2.jpg";
-import slideImage3 from "../../assets/images/img_3.jpg";
-import slideImage4 from "../../assets/images/img_4.jpg";
-import slideImage5 from "../../assets/images/img_5.jpg";
-import slideImage6 from "../../assets/images/img_6.jpg";
-import slideImage7 from "../../assets/images/img_7.jpg";
+  useEffect(() => {
+    axios
+      .get(urlApi)
+      .then((response) => {
+        setMovies(response.data.results);
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  }, []);
 
-function PageFilm() {
   return (
-    <div className="container">
-      <h1 className="heading">Flower Gallery</h1>
-      <Swiper
-        effect="coverflow"
-        grabCursor
-        centeredSlides
-        loop
-        slidesPerView="auto"
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          clickable: true,
-        }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
-      >
-        <SwiperSlide>
-          <img src={slideImage1} alt="slide_image" />
+    <Swiper
+      slidesPerView={3}
+      spaceBetween={30}
+      pagination={{
+        clickable: true,
+      }}
+      className="mySwiper"
+    >
+      {movies.map((item) => (
+        <SwiperSlide key={item.id} Swiperslide={item}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            alt=""
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage2} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage3} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage4} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage5} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage6} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={slideImage7} alt="slide_image" />
-        </SwiperSlide>
-
-        <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline" />
-          </div>
-          <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline" />
-          </div>
-          <div className="swiper-pagination" />
-        </div>
-      </Swiper>
-    </div>
+      ))}
+    </Swiper>
   );
 }
-
-export default PageFilm;
