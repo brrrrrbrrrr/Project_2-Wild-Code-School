@@ -17,7 +17,8 @@ import "./PageFilm.css";
 
 const url = import.meta.env.VITE_FRONT_URL;
 const key = import.meta.env.VITE_API_KEY;
-const urlApi = `${url}?key=${key}`;
+const optionApi = import.meta.env.VITE_API_OPTION;
+const urlApi = `${url}?api_key=${key}&${optionApi}`;
 
 export default function PageFilm() {
   const [movies, setMovies] = useState([]);
