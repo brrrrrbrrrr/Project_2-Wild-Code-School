@@ -12,17 +12,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./PageFilm.css";
+import Genre from "../../components/genre/Genre";
 
 // import required modules
 // import { Pagination } from "swiper";
 
 export default function PageFilm() {
-  const [genre, setGenre] = useState("16");
+  const [genres, setGenre] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [changeGenre, setChangeGenre] = useState("");
   const url = import.meta.env.VITE_FRONT_URL;
   const key = import.meta.env.VITE_API_KEY;
   const optionApi = import.meta.env.VITE_API_OPTION_GENRE;
-  const urlApi = `${url}?api_key=${key}&${optionApi}${genre}`;
+  const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
 
   useEffect(() => {
     axios
@@ -33,12 +35,12 @@ export default function PageFilm() {
       .catch((error) => {
         console.warn(error);
       });
-  }, []);
+  }, [changeGenre]);
 
   return (
     <div className="carousels-container">
       <div className="first-carousel">
-        <h1 className="genre-title">Genre</h1>
+        <h1 className="genre-title">{changeGenre.name}</h1>
         <Swiper
           slidesPerView={3}
           spaceBetween={10}
@@ -58,7 +60,7 @@ export default function PageFilm() {
         </Swiper>
       </div>
       <div className="second-carousel">
-        <h1 className="genre-title">Genre</h1>
+        <h1 className="genre-title">{changeGenre.name}</h1>
         <Swiper
           slidesPerView={3}
           spaceBetween={10}
@@ -76,6 +78,13 @@ export default function PageFilm() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <Genre
+          genres={genres}
+          setGenre={setGenre}
+          setChangeGenre={setChangeGenre}
+          movie={movies}
+          setMovie={setMovies}
+        />
       </div>
     </div>
   );
