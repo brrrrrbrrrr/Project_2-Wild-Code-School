@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react"; // ignored
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,13 +16,13 @@ import "./PageFilm.css";
 // import required modules
 // import { Pagination } from "swiper";
 
-const url = import.meta.env.VITE_FRONT_URL;
-const key = import.meta.env.VITE_API_KEY;
-const optionApi = import.meta.env.VITE_API_OPTION;
-const urlApi = `${url}?api_key=${key}&${optionApi}`;
-
 export default function PageFilm() {
+  const [genre, setGenre] = useState("16");
   const [movies, setMovies] = useState([]);
+  const url = import.meta.env.VITE_FRONT_URL;
+  const key = import.meta.env.VITE_API_KEY;
+  const optionApi = import.meta.env.VITE_API_OPTION_GENRE;
+  const urlApi = `${url}?api_key=${key}&${optionApi}${genre}`;
 
   useEffect(() => {
     axios
