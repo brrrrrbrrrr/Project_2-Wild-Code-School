@@ -11,7 +11,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-function Carousel({ movies2, changeGenre, setMovies2 }) {
+function Carousel({ changeGenre }) {
   const url = import.meta.env.VITE_FRONT_URL;
   const key = import.meta.env.VITE_API_KEY;
   const optionApi = import.meta.env.VITE_API_OPTION_GENRE;
@@ -19,6 +19,7 @@ function Carousel({ movies2, changeGenre, setMovies2 }) {
 
   useEffect(() => {
     const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
+    // console.log(urlApi);
 
     axios
       .get(urlApi)

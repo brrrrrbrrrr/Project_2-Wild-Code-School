@@ -3,6 +3,8 @@ const wishesArray = [
     name: "Détente",
     desc: "J'ai envie de me détendre !",
     id: 1,
+    choice: 3,
+    choice2: 7,
   },
   {
     name: "Défouler",

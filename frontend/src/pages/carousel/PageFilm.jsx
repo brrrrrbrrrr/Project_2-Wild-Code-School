@@ -20,39 +20,22 @@ import Genre from "../../components/genre/Genre";
 // import { Pagination } from "swiper";
 
 export default function PageFilm() {
-  const [genres, setGenre] = useState([]);
-  const [movies, setMovies] = useState([]);
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
+  // console.log(changeGenre2);
 
   return (
     <div className="carousels-container">
       <div className="first-carousel">
         <h1 className="genre-title">{changeGenre.name}</h1>
-        <Carousel
-          movies={movies}
-          changeGenre={changeGenre}
-          setMovies={setMovies}
-        />
+        <Carousel changeGenre={changeGenre} />
       </div>
 
       <div className="second-carousel" />
       <h1 className="genre-title">{changeGenre2.name}</h1>
-      <Carousel
-        movies={movies}
-        changeGenre={changeGenre2}
-        setMovies={setMovies}
-      />
-      <Genre
-        genres={genres}
-        setGenre={setGenre}
-        setChangeGenre={setChangeGenre}
-        movie={movies}
-        setMovie={setMovies}
-        changeGenre2={changeGenre2}
-        setChangeGenre2={setChangeGenre2}
-      />
-      <PageWish />
+      <Carousel changeGenre={changeGenre2} />
+      {/* <Genre setChangeGenre={setChangeGenre} /> */}
+      <PageWish changeGenre2={changeGenre2} setChangeGenre2={setChangeGenre2} />
     </div>
   );
 }

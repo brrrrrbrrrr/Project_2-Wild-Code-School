@@ -1,13 +1,19 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import React from "react";
 import "./Wish.css";
 
-function Wish({ wish }) {
+function Wish({ wish, setChangeGenre2, genres }) {
+  function handleClick() {
+    setChangeGenre2(genres[wish.choice]);
+    // console.log(genres[wish.id]);
+  }
+  // console.log(genres);
   return (
     // Permet d'affecter une class a chaque ID de mon tableau//
 
     <article className={`div${wish.id}`}>
-      <button className="button-wish" type="button">
+      <button className="button-wish" type="button" onClick={handleClick}>
         <h3 className="wish-description">{wish.desc}</h3>
       </button>
     </article>
