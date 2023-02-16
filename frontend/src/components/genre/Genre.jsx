@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import "./Genre.css";
 
-function Genre({ genres, setChangeGenre, setGenre }) {
+function Genre({ genres, setChangeGenre, setGenre, setChangeGenre2 }) {
   useEffect(() => {
     axios
       .get(
@@ -16,9 +16,14 @@ function Genre({ genres, setChangeGenre, setGenre }) {
         setGenre(res.data.genres);
       });
   }, []);
-
+  function handleClick() {
+    setChangeGenre2(genres[2]);
+  }
   return (
     <div>
+      <button className="btn-test" onClick={handleClick}>
+        click moi
+      </button>
       {genres.map((film) => (
         <button
           className="title-genre

@@ -1,22 +1,25 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import "./Carousel.css";
 import axios from "axios";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-function Carousel({ movies, changeGenre, setMovies }) {
+function Carousel({ movies2, changeGenre, setMovies2 }) {
   const url = import.meta.env.VITE_FRONT_URL;
   const key = import.meta.env.VITE_API_KEY;
   const optionApi = import.meta.env.VITE_API_OPTION_GENRE;
-  const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
+
     axios
       .get(urlApi)
       .then((response) => {
