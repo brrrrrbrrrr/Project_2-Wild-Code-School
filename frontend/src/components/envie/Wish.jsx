@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./Wish.css";
 
-function Wish({ wish, setChangeGenre2, genres }) {
+function Wish({ wish, setChangeGenre2, setChangeGenre, genres }) {
   function handleClick() {
-    setChangeGenre2(genres[wish.choice]);
-    // console.log(genres[wish.id]);
+    setChangeGenre2(genres[wish.choice2]);
+    setChangeGenre(genres[wish.choice]);
   }
-  // console.log(genres);
+
   return (
     // Permet d'affecter une class a chaque ID de mon tableau//
 

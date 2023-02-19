@@ -19,7 +19,6 @@ function Carousel({ changeGenre }) {
 
   useEffect(() => {
     const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
-    // console.log(urlApi);
 
     axios
       .get(urlApi)

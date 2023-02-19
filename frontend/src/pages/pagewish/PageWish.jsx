@@ -6,7 +6,7 @@ import axios from "axios";
 import wishesArray from "../../components/envie/Wishes";
 import Wish from "../../components/envie/Wish";
 
-function PageWish({ setChangeGenre2, changeGenre2 }) {
+function PageWish({ setChangeGenre2, setChangeGenre, changeGenre2 }) {
   const [genres, setGenre] = useState([]);
   useEffect(() => {
     axios
@@ -26,6 +26,7 @@ function PageWish({ setChangeGenre2, changeGenre2 }) {
             genres={genres}
             changeGenre2={changeGenre2}
             setChangeGenre2={setChangeGenre2}
+            setChangeGenre={setChangeGenre}
             key={item.id}
             wish={item}
           />

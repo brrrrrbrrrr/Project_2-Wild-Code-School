@@ -14,7 +14,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./PageFilm.css";
-import Genre from "../../components/genre/Genre";
 
 // import required modules
 // import { Pagination } from "swiper";
@@ -35,7 +34,11 @@ export default function PageFilm() {
       <h1 className="genre-title">{changeGenre2.name}</h1>
       <Carousel changeGenre={changeGenre2} />
       {/* <Genre setChangeGenre={setChangeGenre} /> */}
-      <PageWish changeGenre2={changeGenre2} setChangeGenre2={setChangeGenre2} />
+      <PageWish
+        changeGenre2={changeGenre2}
+        setChangeGenre2={setChangeGenre2}
+        setChangeGenre={setChangeGenre}
+      />
     </div>
   );
 }
