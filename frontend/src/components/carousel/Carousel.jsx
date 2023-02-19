@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
@@ -11,14 +12,16 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-function Carousel({ changeGenre }) {
+function Carousel({ changeGenre, setItem }) {
   const url = import.meta.env.VITE_FRONT_URL;
   const key = import.meta.env.VITE_API_KEY;
-  const optionApi = import.meta.env.VITE_API_OPTION_GENRE;
+  const optionApi = import.meta.env.VITE_API_OPTION_DEFAULT_PAGE;
+  const optionGenre = import.meta.env.VITE_API_OPTION_GENRE;
   const [movies, setMovies] = useState([]);
+  const [nextpage, setNextpage] = useState(1);
 
   useEffect(() => {
-    const urlApi = `${url}?api_key=${key}&${optionApi}${changeGenre.id}`;
+    const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${optionGenre}${changeGenre.id}`;
 
     axios
       .get(urlApi)
@@ -28,7 +31,7 @@ function Carousel({ changeGenre }) {
       .catch((error) => {
         console.warn(error);
       });
-  }, [changeGenre]);
+  }, [changeGenre, nextpage]);
 
   return (
     <div>
@@ -40,8 +43,14 @@ function Carousel({ changeGenre }) {
         }}
         className="mySwiper"
       >
+        <button onClick={() => setNextpage(nextpage + 1)}>click me</button>
         {movies.map((item) => (
-          <SwiperSlide key={item.id} swiperslide={item}>
+          <SwiperSlide
+            key={item.id}
+            swiperslide={item}
+            onClick={() => setItem(item)}
+            // onClick={() => console.log(item)}
+          >
             <img
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
               alt=""
