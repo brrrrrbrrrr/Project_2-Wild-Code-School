@@ -17,6 +17,7 @@ function PageWish({ setChangeGenre2, setChangeGenre, changeGenre2 }) {
         setGenre(res.data.genres);
       });
   }, []);
+
   return (
     <section className="page-wishes">
       <h2 className="wish-title">Que voulez-vous ressentir ?</h2>

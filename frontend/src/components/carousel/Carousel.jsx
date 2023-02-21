@@ -17,12 +17,13 @@ function Carousel({ changeGenre, setItem }) {
   const key = import.meta.env.VITE_API_KEY;
   const optionApi = import.meta.env.VITE_API_OPTION_DEFAULT_PAGE;
   const optionGenre = import.meta.env.VITE_API_OPTION_GENRE;
+  const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
 
   useEffect(() => {
-    const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${optionGenre}${changeGenre.id}`;
-
+    const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${average}${optionGenre}${changeGenre.id}`;
+    // console.log(urlApi);
     axios
       .get(urlApi)
       .then((response) => {
@@ -43,7 +44,12 @@ function Carousel({ changeGenre, setItem }) {
         }}
         className="mySwiper"
       >
-        <button onClick={() => setNextpage(nextpage + 1)}>click me</button>
+        <button
+          className="nextpage-btn"
+          onClick={() => setNextpage(nextpage + 1)}
+        >
+          Plus de choix
+        </button>
         {movies.map((item) => (
           <SwiperSlide
             key={item.id}
