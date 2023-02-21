@@ -2,16 +2,44 @@
 // import PageWish from "./pages/pagewish/PageWish";
 // import Home from "./pages/Home";
 import "./App.css";
-
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 
+// eslint-disable-next-line no-unused-vars
+
 function App() {
+  const [changeGenre, setChangeGenre] = useState("");
+  const [changeGenre2, setChangeGenre2] = useState("");
   return (
     <div className="App">
-      {/* <Home /> */}
-      <PageFilm />
-      {/* <PageWish /> */}
-      {/* <Loading /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PageWish
+                setChangeGenre2={setChangeGenre2}
+                setChangeGenre={setChangeGenre}
+                changeGenre2={changeGenre2}
+              />
+            }
+          />
+          <Route
+            path="/pagefilm"
+            element={
+              <PageFilm
+                changeGenre={changeGenre}
+                changeGenre2={changeGenre2}
+                setChangeGenre2={setChangeGenre2}
+                setChangeGenre={setChangeGenre}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
