@@ -1,0 +1,13 @@
+.mask-description {
+  color: white;
+
+  text-transform: uppercase;
+}
+
+.mask {
+  width: 20%;
+}
+
+.mask-img {
+  width: 60%;
+}

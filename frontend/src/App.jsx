@@ -1,12 +1,10 @@
-import Home from "./pages/Home";
-
 import "./App.css";
+import PageMask from "./pages/pagesMask/PageMask";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <PageMask />
     </div>
   );
 }
