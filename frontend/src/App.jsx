@@ -1,10 +1,10 @@
-import Loading from "./pages/Loading";
+import PageWish from "./pages/pagewish/PageWish";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Loading />
+      <PageWish />
     </div>
   );
 }
