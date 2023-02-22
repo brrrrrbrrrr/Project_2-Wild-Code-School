@@ -1,16 +1,16 @@
 .mask-description {
   color: white;
-
   text-align: center;
   font-style: italic;
   font-family: "Barlow Condensed", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   padding: 10px;
+  font-size: 30px;
 }
 
 .mask-img {
-  max-width: 50%;
+  max-width: 70%;
   display: block;
   margin: 0 auto;
 }
@@ -20,101 +20,3 @@
   flex-direction: column;
   padding-top: 30px;
 }
-
-/* @media screen and (min-width: 768px) {
-  .button-wish {
-    height: 15vh;
-    width: 25vw;
-  }
-  .mask-description {
-    font-size: 2em;
-    font-family: "Barlow Condensed", sans-serif;
-  }
-} */
-
-/*.mask-description {
-  color: white;
-  text-transform: uppercase;
-  margin-left: 50%;
-  margin-top: 5rem;
-  text-transform: uppercase;
-  font-family: "Barlow Condensed", 400, sans-serif;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.2em;
-}
-*/
-
-/*.mask-description {
-  color: white;
-  align-items: center;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  font-family: "Barlow Condensed", sans-serif;
-  padding-bottom: 15px;
-  font-size: 3em;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 150%;
-}
-*/
-
-/*.mask-description {
-  background-color: var(--primary-color);
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  font-style: italic;
-  font-family: "Barlow Condensed", 400, sans-serif;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.2em;
-}
-*/
-
-/*.mask-description {
-  background-color: var(--primary-color);
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  font-style: italic;
-  font-family: "Barlow Condensed", 400, sans-serif;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.2em;
-}
-
-.mask {
-  width: 125%;
-  align-items: center;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Barlow Condensed", sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 100;
-  margin: var(--margin-title);
-  margin-left: 15%;
-  /*display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 7%;
-  text-align: center;
-  }*/
-
-/*.mask {
-  width: 60%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 7%;
-  text-align: center;
-  z-index: 100;
-}*/
