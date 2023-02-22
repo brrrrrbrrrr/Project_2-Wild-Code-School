@@ -7,8 +7,6 @@ import React, { useState } from "react";
 
 import Carousel from "../../components/carousel/Carousel";
 
-import Banner from "../../components/banner/Banner";
-
 // eslint-disable-next-line import/no-unresolved
 import "swiper/css";
 // eslint-disable-next-line import/no-unresolved
@@ -16,12 +14,9 @@ import "swiper/css/pagination";
 
 import "./PageFilm.css";
 
-export default function PageFilm({ changeGenre, changeGenre2 }) {
-  const [item, setItem] = useState("");
-
+export default function PageFilm({ changeGenre, changeGenre2, setItem }) {
   return (
     <div className="carousels-container">
-      <Banner item={item} />
       <div className="first-carousel">
         <h1 className="genre-title">{changeGenre.name}</h1>
         <Carousel changeGenre={changeGenre} setItem={setItem} />

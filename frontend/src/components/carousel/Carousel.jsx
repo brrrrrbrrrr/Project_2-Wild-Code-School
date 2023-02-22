@@ -11,6 +11,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { useNavigate } from "react-router-dom";
 
 function Carousel({ changeGenre, setItem }) {
   const url = import.meta.env.VITE_FRONT_URL;
@@ -20,6 +21,7 @@ function Carousel({ changeGenre, setItem }) {
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${average}${optionGenre}${changeGenre.id}`;
@@ -33,6 +35,10 @@ function Carousel({ changeGenre, setItem }) {
         console.warn(error);
       });
   }, [changeGenre, nextpage]);
+
+  function handleClick(item) {
+    navigate("/banner", { state: { item } });
+  }
 
   return (
     <div>
@@ -54,8 +60,8 @@ function Carousel({ changeGenre, setItem }) {
           <SwiperSlide
             key={item.id}
             swiperslide={item}
-            onClick={() => setItem(item)}
-            // onClick={() => console.log(item)}
+            // onClick={() => }
+            onClick={() => handleClick(item)}
           >
             <img
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}

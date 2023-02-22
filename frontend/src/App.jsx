@@ -5,6 +5,7 @@ import "./App.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
+import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 
@@ -13,6 +14,8 @@ import PageFilm from "./pages/carousel/PageFilm";
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
+  // const [item, setItem] = useState("");
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -38,6 +41,7 @@ function App() {
               />
             }
           />
+          <Route path="/banner" element={<Banner />} />
         </Routes>
       </BrowserRouter>
     </div>

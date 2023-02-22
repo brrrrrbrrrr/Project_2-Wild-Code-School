@@ -6,3 +6,23 @@
 .item-overview {
   color: white;
 }
+
+.item-title {
+  color: white;
+}
+
+.synopsis-title {
+  color: var(--primary-color);
+}
+
+.poster-img-container {
+  width: 100%;
+  position: relative;
+}
+
+.poster-img {
+  width: 20%;
+  position: absolute;
+  top: -100%;
+  left: 5%;
+}
