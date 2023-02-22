@@ -16,19 +16,24 @@ function Banner() {
         className="backdrop-img"
         src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
       />
-      <div className="poster-img-container">
-        <img
-          className="poster-img"
-          src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-        />
+
+      <div className="item-description-container">
+        <div className="image-title-container">
+          <div className="poster-img-container">
+            <img
+              className="poster-img"
+              src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            />
+          </div>
+
+          <h1 className="item-title">{item.title}</h1>
+        </div>
+
+        <article className="synopsis-container">
+          <h2 className="synopsis-title">Synopsis</h2>
+          <p className="item-overview">{item.overview}</p>
+        </article>
       </div>
-
-      <h1 className="item-title">{item.title}</h1>
-
-      <article>
-        <h2 className="synopsis-title">Synopsis</h2>
-        <p className="item-overview">{item.overview}</p>
-      </article>
     </div>
   );
 }

@@ -1,28 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,900;1,400;1,900&display=swap");
 .banner-container {
-  /* width: 100vw; */
   display: flex;
   flex-direction: column;
 }
+
+/* .backdrop-img {
+} */
 .item-overview {
   color: white;
+  width: 70%;
+  font-size: 5vw;
+  text-align: justify;
+  padding-top: 10%;
 }
 
 .item-title {
   color: white;
+  left: 30%;
+  z-index: 1;
+}
+/* .item-description-container {
+} */
+.image-title-container {
+  display: flex;
 }
 
 .synopsis-title {
   color: var(--primary-color);
+  font-size: 10vw;
+  text-transform: uppercase;
 }
-
+.synopsis-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .poster-img-container {
-  width: 100%;
-  position: relative;
+  width: 30%;
 }
 
 .poster-img {
-  width: 20%;
-  position: absolute;
-  top: -100%;
-  left: 5%;
+  width: 100%;
 }
