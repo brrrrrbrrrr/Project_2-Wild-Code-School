@@ -17,12 +17,17 @@
 .item-title {
   color: white;
   left: 30%;
-  z-index: 1;
+  font-size: 6vw;
+  align-items: center;
+  text-align: center;
+  display: flex;
 }
 /* .item-description-container {
 } */
 .image-title-container {
   display: flex;
+  position: relative;
+  background-color: rgba(240, 248, 255, 0.942);
 }
 
 .synopsis-title {
@@ -38,8 +43,14 @@
 }
 .poster-img-container {
   width: 30%;
+  border: 1px solid white;
 }
 
 .poster-img {
   width: 100%;
+}
+
+.backdrop-img {
+  display: flex;
+  position: absolute;
 }
