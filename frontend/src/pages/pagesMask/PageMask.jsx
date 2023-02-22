@@ -1,7 +1,7 @@
 import React from "react";
 import "./PageMask.css";
 import Page2Array from "../../components/Page2Array";
-import MaskComp from "../../components/MaskComp";
+import MaskComp from "../../components/emotion/MaskComp";
 
 function PageMask() {
   return (
