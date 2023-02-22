@@ -1,0 +1,22 @@
+.mask-description {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.mask-img {
+  max-width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+
+.mask {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
