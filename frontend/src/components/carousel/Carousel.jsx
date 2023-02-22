@@ -26,7 +26,7 @@ function Carousel({ changeGenre, setItem }) {
 
   useEffect(() => {
     const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${average}${optionGenre}${changeGenre.id}`;
-    // console.log(urlApi);
+
     axios
       .get(urlApi)
       .then((response) => {
