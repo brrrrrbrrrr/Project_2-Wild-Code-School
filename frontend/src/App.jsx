@@ -14,6 +14,9 @@ import PageFilm from "./pages/carousel/PageFilm";
 
 // eslint-disable-next-line no-unused-vars
 
+// eslint-disable-next-line import/no-unresolved
+import Footer from "./components/footer/footer";
+
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
@@ -35,6 +38,7 @@ function App() {
         genres={genres}
         changeGenre2={changeGenre2}
       />
+
       <BrowserRouter>
         <Routes>
           <Route
@@ -65,6 +69,7 @@ function App() {
           <Route path="/banner" element={<Banner />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
