@@ -12,10 +12,12 @@ function Banner() {
   // console.log(item);
   return (
     <div className="banner-container">
-      <img
-        className="backdrop-img"
-        src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
-      />
+      <div className="backdrop-img-container">
+        <img
+          className="backdrop-img"
+          src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+        />
+      </div>
 
       <div className="item-description-container">
         <div className="image-title-container">
@@ -25,8 +27,10 @@ function Banner() {
               src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
             />
           </div>
-
-          <h1 className="item-title">{item.title}</h1>
+          <div className="item-title-container">
+            <h1 className="item-title">{item.title}</h1>
+            <div className="line" />
+          </div>
         </div>
 
         <article className="synopsis-container">
