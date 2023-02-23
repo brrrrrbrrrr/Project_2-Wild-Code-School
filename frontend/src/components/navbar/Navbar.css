@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Barlow Condensed", sans-serif;
   font-family: "Inter", sans-serif;
@@ -12,7 +13,8 @@ body {
   color: #fcd24f;
 }
 
-.items {
+.items,
+.small-items {
   list-style-type: none;
   text-decoration: none;
   font-size: 20px;
@@ -21,6 +23,7 @@ body {
   font-style: italic;
   text-transform: uppercase;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .logo-navbar {
@@ -57,6 +60,7 @@ nav {
   display: flex;
   gap: 5px;
 }
+
 .logo-container {
   align-items: center;
 }
@@ -70,21 +74,106 @@ nav {
   text-transform: uppercase;
 }
 
+.menu {
+  height: 60px;
+  list-style: none;
+  padding: 10px;
+  margin: 40px;
+
+}
+
+.menu li {
+  float: left;
+  width: 100%;
+}
+
+.menu li a:link,
+.menu li a:visited {
+  display: block;
+  color: #FFF;
+  background: #293245;
+  padding: 6px 10px;
+  border-right: 1px solid #FFF;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu li p:hover {
+  background-color: #199BD2;
+
+}
+
+.menu li:active {
+  background-color: #808080;
+
+}
+
+.menu .sousmenu {
+  list-style-type: none;
+  display: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fcd24f;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-right: 30px;
+  cursor: pointer;
+
+}
+
+.menu .sousmenu li {
+  float: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.menu .sousmenu li a:link,
+.menu li a:visited {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  background-color: #808080;
+}
+
+.menu .sousmenu li a:hover {
+  background-color: #199BD2;
+  cursor: pointer;
+}
+
+.menu li:hover .sousmenu {
+  display: block;
+}
+
+.small-items {
+
+  font-size: 18px;
+
+}
+
 @media screen and (max-width: 940px) {
   header {
     height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-   
+
   }
 
   nav {
     padding: 0;
   }
+
   .toggle-mobile {
     display: block;
   }
+
   nav {
     position: absolute;
     flex-direction: column;
@@ -103,12 +192,19 @@ nav {
 
   .list-items {
     flex-direction: column;
+    position: relative;
   }
 
   .items {
     margin: 35px 0;
     text-align: center;
     text-shadow: 1px 1px 1px #fcd24f, 0 0 black;
+  }
+
+  .menu .sousmenu {
+    bottom: 10px;
+    left: 12vw;
+    width: 20vw;
   }
 
   .logo-title {

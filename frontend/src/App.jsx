@@ -4,7 +4,10 @@
 import "./App.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import axios from "axios";
+import Navbar from "./components/navbar/Navbar";
 import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
@@ -14,9 +17,24 @@ import PageFilm from "./pages/carousel/PageFilm";
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
-
+  const [genres, setGenre] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6"
+      )
+      .then((res) => {
+        setGenre(res.data.genres);
+      });
+  }, [genres]);
   return (
     <div className="App">
+      <Navbar
+        setChangeGenre={setChangeGenre}
+        setChangeGenre2={setChangeGenre2}
+        genres={genres}
+        changeGenre2={changeGenre2}
+      />
       <BrowserRouter>
         <Routes>
           <Route
@@ -26,6 +44,8 @@ function App() {
                 setChangeGenre2={setChangeGenre2}
                 setChangeGenre={setChangeGenre}
                 changeGenre2={changeGenre2}
+                genres={genres}
+                setGenre={setGenre}
               />
             }
           />
@@ -37,6 +57,8 @@ function App() {
                 changeGenre2={changeGenre2}
                 setChangeGenre2={setChangeGenre2}
                 setChangeGenre={setChangeGenre}
+                genres={genres}
+                setGenre={setGenre}
               />
             }
           />
