@@ -17,7 +17,7 @@
   justify-content: center;
   color: white;
   left: 30%;
-  font-size: 5vw;
+  font-size: 4vw;
   align-items: flex-start;
   text-align: center;
   width: 100%;
@@ -27,10 +27,14 @@
   text-transform: uppercase;
   font-family: "Barlow Condensed", sans-serif;
   font-style: italic;
+  padding-left: 10%;
+  padding-right: 5%;
+  flex-wrap: wrap;
 }
 
 .image-title-container {
   display: flex;
+  width: 100%;
 }
 
 .synopsis-title {
@@ -48,6 +52,7 @@
 }
 .poster-img-container {
   width: 30%;
+  max-width: 300px;
 }
 
 .poster-img {
@@ -84,4 +89,22 @@
   width: 13%;
   cursor: pointer;
   margin: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .item-title {
+    font-size: 2vw;
+  }
+  .synopsis-title {
+    font-size: 4vw;
+  }
+  .item-overview {
+    font-size: 1.8vw;
+  }
+  .image-title-container {
+    height: 20rem;
+  }
+  .button {
+    width: 5%;
+  }
 }
