@@ -14,7 +14,6 @@ import PageFilm from "./pages/carousel/PageFilm";
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
-  // const [item, setItem] = useState("");
 
   return (
     <div className="App">

@@ -11,6 +11,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
 import { useNavigate } from "react-router-dom";
 
 function Carousel({ changeGenre, setItem }) {
@@ -25,7 +26,7 @@ function Carousel({ changeGenre, setItem }) {
 
   useEffect(() => {
     const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${average}${optionGenre}${changeGenre.id}`;
-    // console.log(urlApi);
+
     axios
       .get(urlApi)
       .then((response) => {
@@ -49,6 +50,23 @@ function Carousel({ changeGenre, setItem }) {
           clickable: true,
         }}
         className="mySwiper"
+        breakpoints={{
+          // when window width is >= 576px
+          576: {
+            slidesPerView: 4,
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 5,
+          },
+          // when window width is >= 1024px
+          1024: {
+            slidesPerView: 10,
+          },
+          1280: {
+            slidesPerView: 10,
+          },
+        }}
       >
         <button
           className="nextpage-btn"
@@ -57,17 +75,21 @@ function Carousel({ changeGenre, setItem }) {
           Plus de choix
         </button>
         {movies.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            swiperslide={item}
-            // onClick={() => }
-            onClick={() => handleClick(item)}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-              alt=""
-            />
-          </SwiperSlide>
+          <div className="carousel-container">
+            <SwiperSlide
+              className="mySwiperSlide"
+              key={item.id}
+              swiperslide={item}
+              // onClick={() => }
+              onClick={() => handleClick(item)}
+            >
+              <img
+                className="item-carousel-img"
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                alt=""
+              />
+            </SwiperSlide>
+          </div>
         ))}
       </Swiper>
     </div>
