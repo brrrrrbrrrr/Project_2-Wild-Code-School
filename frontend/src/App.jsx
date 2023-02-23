@@ -10,6 +10,8 @@ import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 
 // eslint-disable-next-line no-unused-vars
+import Body from "./components/footer/Body";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
@@ -17,6 +19,8 @@ function App() {
 
   return (
     <div className="App">
+      <Body />
+      <Footer />
       <BrowserRouter>
         <Routes>
           <Route
@@ -43,6 +47,8 @@ function App() {
           <Route path="/banner" element={<Banner />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
+      <Body />
     </div>
   );
 }
