@@ -11,7 +11,7 @@ function PageWish({ setChangeGenre2, setChangeGenre, changeGenre2 }) {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6"
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6&language=fr-FR"
       )
       .then((res) => {
         setGenre(res.data.genres);
