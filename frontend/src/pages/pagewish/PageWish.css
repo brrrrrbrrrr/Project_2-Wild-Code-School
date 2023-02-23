@@ -20,9 +20,6 @@
   margin: var(--margin-title);
 }
 
-.page-wishes {
-  height: 80vh;
-}
 .wishes-full {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
