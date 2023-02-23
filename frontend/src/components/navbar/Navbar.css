@@ -75,10 +75,10 @@ nav {
 }
 
 .menu {
-  height: 60px;
+  /* height: 60px; */
   list-style: none;
-  padding: 10px;
-  margin: 40px;
+  /* padding: 10px;
+  margin: 30px; */
 
 }
 
@@ -123,6 +123,7 @@ nav {
   text-transform: uppercase;
   margin-right: 30px;
   cursor: pointer;
+  font-size: 16px;
 
 }
 
@@ -151,11 +152,6 @@ nav {
   display: block;
 }
 
-.small-items {
-
-  font-size: 18px;
-
-}
 
 @media screen and (max-width: 940px) {
   header {
@@ -188,6 +184,7 @@ nav {
     -ms-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     top: 0px;
+    z-index: 100;
   }
 
   .list-items {
@@ -201,10 +198,14 @@ nav {
     text-shadow: 1px 1px 1px #fcd24f, 0 0 black;
   }
 
+
   .menu .sousmenu {
-    bottom: 10px;
-    left: 12vw;
-    width: 20vw;
+    bottom: 143px;
+    left: 75px;
+    width: 160px;
+    font-size: 14px;
+
+    border-radius: 0 5px 5px 0;
   }
 
   .logo-title {
@@ -220,6 +221,7 @@ nav {
     justify-content: space-between;
     cursor: pointer;
     margin: 15px;
+    z-index: 100;
   }
 
   .burger-bar {

@@ -46,9 +46,7 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
             <li>
               <ul className="menu">
                 <li>
-                  <p to="./" className="items">
-                    Envie
-                  </p>
+                  <p className="items">Envie</p>
                   <ul className="sousmenu">
                     {array.map((item) => (
                       <WishNav
