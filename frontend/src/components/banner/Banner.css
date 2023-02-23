@@ -71,3 +71,17 @@
 .item-title-container {
   width: 100%;
 }
+
+.button-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.button {
+  width: 13%;
+  cursor: pointer;
+  margin: 10%;
+}

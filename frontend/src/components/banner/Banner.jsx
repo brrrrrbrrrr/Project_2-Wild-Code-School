@@ -1,15 +1,23 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/button-has-type */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/alt-text */
 
 import "./Banner.css";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import button from "../../assets/images/button.png";
 
 function Banner() {
+  const navigate = useNavigate();
   const { state } = useLocation();
   const { item } = state;
-  // console.log(item);
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="banner-container">
       <div className="backdrop-img-container">
@@ -37,6 +45,9 @@ function Banner() {
           <h2 className="synopsis-title">Synopsis</h2>
           <p className="item-overview">{item.overview}</p>
         </article>
+        <div className="button-container">
+          <img className="button" onClick={goBack} src={button} alt="" />
+        </div>
       </div>
     </div>
   );
