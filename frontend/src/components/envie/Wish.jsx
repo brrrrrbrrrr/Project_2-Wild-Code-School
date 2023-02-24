@@ -1,14 +1,20 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import React from "react";
+import { React, useState } from "react";
 import "./Wish.css";
 import { Link } from "react-router-dom";
 
 function Wish({ wish, setChangeGenre2, setChangeGenre, genres }) {
+  const [loading, setLoading] = useState(false);
+
   function handleClick() {
     setChangeGenre2(genres[wish.choice2]);
     setChangeGenre(genres[wish.choice]);
+  }
+
+  function loadOn() {
+    setLoading(!loading);
   }
 
   return (
@@ -16,7 +22,11 @@ function Wish({ wish, setChangeGenre2, setChangeGenre, genres }) {
 
     <article className={`div${wish.id}`}>
       <Link to="pagefilm">
-        <button className="button-wish" type="button" onClick={handleClick}>
+        <button
+          className="button-wish"
+          type="button"
+          onClick={(handleClick, loadOn)}
+        >
           <h3 className="wish-description">{wish.desc}</h3>
         </button>
       </Link>

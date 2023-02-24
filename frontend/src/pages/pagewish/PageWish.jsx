@@ -8,6 +8,7 @@ import Wish from "../../components/envie/Wish";
 
 function PageWish({ setChangeGenre2, setChangeGenre, changeGenre2 }) {
   const [genres, setGenre] = useState([]);
+
   useEffect(() => {
     axios
       .get(
