@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Link } from "react-router-dom";
 import "./MaskComp.css";
 
 function MaskComp({ mask }) {
   return (
     <article className={`div${mask.id}`}>
       <div className="mask">
-        <img className="mask-img" src={mask.img} alt={mask.name} />
-        <h3 className="mask-description">{mask.desc}</h3>
+        <Link to="/pagewish">
+          <img className="mask-img" src={mask.img} alt={mask.name} />
+          <h3 className="mask-description">{mask.desc}</h3>
+        </Link>
       </div>
     </article>
   );

@@ -11,6 +11,7 @@ import Navbar from "./components/navbar/Navbar";
 import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
+import PageMask from "./pages/pagesMask/PageMask";
 
 // eslint-disable-next-line no-unused-vars
 
@@ -41,8 +42,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<PageMask />} />
           <Route
-            path="/"
+            path="/pagewish"
             element={
               <PageWish
                 setChangeGenre2={setChangeGenre2}
@@ -54,7 +56,7 @@ function App() {
             }
           />
           <Route
-            path="/pagefilm"
+            path="/pagewish/pagefilm"
             element={
               <PageFilm
                 changeGenre={changeGenre}
