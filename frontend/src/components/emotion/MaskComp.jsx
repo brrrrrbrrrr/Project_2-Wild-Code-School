@@ -6,7 +6,7 @@ import "./MaskComp.css";
 
 function MaskComp({ mask }) {
   return (
-    <article className={`div${mask.id}`}>
+    <article className={`divmask${mask.id}`}>
       <div className="mask">
         <Link to="/pagewish">
           <img className="mask-img" src={mask.img} alt={mask.name} />
