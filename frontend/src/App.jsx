@@ -12,6 +12,7 @@ import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 import PageMask from "./pages/pagesMask/PageMask";
+import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil";
 
 // eslint-disable-next-line no-unused-vars
 
@@ -31,7 +32,15 @@ function App() {
         setGenre(res.data.genres);
       });
   }, [genres]);
-  return (
+  const [loader, setLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
+  }, []);
+  return loader ? (
+    <TransitionAccueil />
+  ) : (
     <div className="App">
       <Navbar
         setChangeGenre={setChangeGenre}
