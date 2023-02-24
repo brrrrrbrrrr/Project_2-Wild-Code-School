@@ -83,11 +83,15 @@ function Carousel({ changeGenre, setItem }) {
               // onClick={() => }
               onClick={() => handleClick(item)}
             >
-              <img
-                className="item-carousel-img"
-                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                alt=""
-              />
+              {item.poster_path ? (
+                <img
+                  className="item-carousel-img"
+                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                  alt={item.title}
+                />
+              ) : (
+                <p className="no-poster">{item.title}</p>
+              )}
             </SwiperSlide>
           </div>
         ))}
