@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,900;1,400;1,900&display=swap");
-* {
-  background: black;
-}
+
 
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -54,6 +53,7 @@ body {
   padding-top: 1%;
   font-size: 5vw;
   padding-left: 2%;
+  color: black;
 }
 
 @media screen and (min-width: 768px) {

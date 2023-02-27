@@ -1,24 +1,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./PageWish.css";
-import axios from "axios";
 import wishesArray from "../../components/envie/Wishes";
 import Wish from "../../components/envie/Wish";
 
-function PageWish({ setChangeGenre2, setChangeGenre, changeGenre2 }) {
-  const [genres, setGenre] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6"
-      )
-      .then((res) => {
-        setGenre(res.data.genres);
-      });
-  }, []);
-
+function PageWish({ genres, setChangeGenre2, setChangeGenre, changeGenre2 }) {
   return (
     <section className="page-wishes">
       <h2 className="wish-title">Que voulez-vous ressentir ?</h2>
