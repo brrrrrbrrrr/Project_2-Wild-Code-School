@@ -23,10 +23,6 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
     }
   };
 
-  const handleChangeNav = (newMood) => {
-    setChoiceNav(newMood);
-  };
-
   useEffect(() => {
     const changeWidth = () => {
       setWidth(window.innerWidth);
@@ -64,7 +60,6 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
                         wish={item}
                         choiceNav={choiceNav}
                         setChoiceNav={setChoiceNav}
-                        handleChangeNav={handleChangeNav}
                       />
                     ))}
                   </ul>

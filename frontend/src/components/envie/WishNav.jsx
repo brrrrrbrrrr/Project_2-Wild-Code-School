@@ -9,8 +9,12 @@ function WishNav({
   setChangeGenre2,
   setChangeGenre,
   genres,
-  handleChangeNav,
+  setChoiceNav,
 }) {
+  const handleChangeNav = (newMood) => {
+    setChoiceNav(newMood);
+  };
+
   function handleClickNav() {
     setChangeGenre2(genres[wish.choice2]);
     setChangeGenre(genres[wish.choice]);
