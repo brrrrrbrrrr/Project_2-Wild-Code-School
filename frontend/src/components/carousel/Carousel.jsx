@@ -80,7 +80,6 @@ function Carousel({ changeGenre, setItem }) {
               className="mySwiperSlide"
               key={item.id}
               swiperslide={item}
-              // onClick={() => }
               onClick={() => handleClick(item)}
             >
               <img

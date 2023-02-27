@@ -1,13 +1,16 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/button-has-type */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/alt-text */
-
+import axios from "axios";
 import "./Banner.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import YouTube from "react-youtube";
 import button from "../../assets/images/button.png";
 
 function Banner() {
@@ -17,7 +20,18 @@ function Banner() {
   const goBack = () => {
     navigate(-1);
   };
-
+  const [movieVideo, setMovieVideo] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${item.id}?api_key=b57a315f37e6b92bd78f45a87f99afa6&append_to_response=videos`
+      )
+      .then((response) => {
+        setMovieVideo(response.data.videos.results);
+      });
+  }, []);
+  const trailer = movieVideo.find((vid) => vid.name === "Official Trailer");
+  console.log(trailer);
   return (
     <div className="banner-container">
       <div className="backdrop-img-container">
@@ -26,7 +40,7 @@ function Banner() {
           src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
         />
       </div>
-
+      {/* <YouTube videoId={trailer.key} />; */}
       <div className="item-description-container">
         <div className="image-title-container">
           <div className="poster-img-container">
