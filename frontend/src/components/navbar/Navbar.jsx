@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/Logo_FeelMotion_sans_texte.png";
+import wishesArray from "../envie/Wishes";
+import WishNav from "../envie/WishNav";
 
-function Navbar() {
+// eslint-disable-next-line react/prop-types
+function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [burgerBar, setBurgerBar] = useState("burger-bar unclicked");
+  const array = wishesArray;
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
@@ -39,7 +43,25 @@ function Navbar() {
           <ul className="list-items">
             <li className="items">accueil</li>
             <li className="items">à propos</li>
-            <li className="items">humeurs</li>
+            <li>
+              <ul className="menu">
+                <li>
+                  <p className="items">Envie</p>
+                  <ul className="sousmenu">
+                    {array.map((item) => (
+                      <WishNav
+                        genres={genres}
+                        changeGenre2={changeGenre2}
+                        setChangeGenre2={setChangeGenre2}
+                        setChangeGenre={setChangeGenre}
+                        key={item.id}
+                        wish={item}
+                      />
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+            </li>
             <li className="items">favoris</li>
             <li className="items">contact</li>
           </ul>
