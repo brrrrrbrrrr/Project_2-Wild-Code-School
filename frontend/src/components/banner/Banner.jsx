@@ -13,6 +13,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 import YouTube from "react-youtube";
 import button from "../../assets/images/button.png";
 
+const opts = {
+  height: "390",
+  width: "640",
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+  },
+};
 function Banner() {
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -40,7 +48,9 @@ function Banner() {
           src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
         />
       </div>
-      {trailer ? <YouTube videoId={trailer?.key} /> : null}
+      <div className="video-container">
+        {trailer ? <YouTube videoId={trailer?.key} opts={opts} /> : null}
+      </div>
       <div className="item-description-container">
         <div className="image-title-container">
           <div className="poster-img-container">
