@@ -75,11 +75,11 @@ function Carousel({ changeGenre, setItem }) {
           Plus de choix
         </button>
         {movies.map((item) => (
-          <div className="carousel-container">
+          <div key={item.id} className="carousel-container">
             <SwiperSlide
               className="mySwiperSlide"
-              key={item.id}
               swiperslide={item}
+              key={item.id}
               onClick={() => handleClick(item)}
             >
               {item.poster_path ? (

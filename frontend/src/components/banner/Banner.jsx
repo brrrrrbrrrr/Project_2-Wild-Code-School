@@ -12,12 +12,18 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import YouTube from "react-youtube";
 import button from "../../assets/images/button.png";
+import Plateform from "../plateform/Plateform";
+import PageError from "../../pages/pageError/PageError";
+
+<meta
+  httpEquiv="Feature-Policy"
+  content="accelerometer 'none'; gyroscope 'none'; picture-in-picture 'none'; clipboard-write 'none'; encrypted-media 'none'; autoplay 'none'"
+/>;
 
 const opts = {
   height: "390",
   width: "640",
   playerVars: {
-    // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
   },
 };
@@ -38,15 +44,20 @@ function Banner() {
         setMovieVideo(response.data.videos.results);
       });
   }, []);
+  console.log(item);
   const trailer = movieVideo.find((vid) => vid.name === "Official Trailer");
-  console.log(movieVideo);
+
   return (
     <div className="banner-container">
       <div className="backdrop-img-container">
-        <img
-          className="backdrop-img"
-          src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
-        />
+        {item.backdrop_path !== null ? (
+          <img
+            className="backdrop-img"
+            src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+          />
+        ) : (
+          <PageError />
+        )}
       </div>
       <div className="video-container">
         {trailer ? <YouTube videoId={trailer?.key} opts={opts} /> : null}
@@ -67,8 +78,15 @@ function Banner() {
 
         <article className="synopsis-container">
           <h2 className="synopsis-title">Synopsis</h2>
-          <p className="item-overview">{item.overview}</p>
+          {item.overview !== "" ? (
+            <p className="item-overview">{item.overview}</p>
+          ) : (
+            <p>Indisponible</p>
+          )}
         </article>
+        <div />
+        <h1 className="title-plateform">Disponible en streaming sur </h1>
+        <Plateform item={item} />
         <div className="button-container">
           <img className="button" onClick={goBack} src={button} alt="" />
         </div>

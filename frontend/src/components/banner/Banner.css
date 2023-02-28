@@ -90,7 +90,13 @@
   cursor: pointer;
   margin: 10%;
 }
-
+.title-plateform {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-style: italic;
+  margin: 5vh;
+  font-size: 5vw;
+}
 /* ------------------- Vidéo youtube --------------------- */
 .video-container iframe {
   position: absolute;
@@ -122,6 +128,9 @@
   }
   .image-title-container {
     height: 20rem;
+  }
+  .title-plateform {
+    font-size: 3vw;
   }
   .button {
     width: 5%;
