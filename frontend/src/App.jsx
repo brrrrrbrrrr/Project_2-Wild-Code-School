@@ -7,10 +7,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
+import PageError from "./pages/pageError/PageError";
 import Navbar from "./components/navbar/Navbar";
 import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
+import PageMask from "./pages/pagesMask/PageMask";
+import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil";
 
 // eslint-disable-next-line no-unused-vars
 
@@ -24,13 +27,21 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6"
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=b57a315f37e6b92bd78f45a87f99afa6&language=fr-FR"
       )
       .then((res) => {
         setGenre(res.data.genres);
       });
+  }, [genres]);
+  const [loader, setLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
   }, []);
-  return (
+  return loader ? (
+    <TransitionAccueil />
+  ) : (
     <div className="App">
       <Navbar
         setChangeGenre={setChangeGenre}
@@ -41,8 +52,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<PageMask />} />
           <Route
-            path="/"
+            path="/pagewish"
             element={
               <PageWish
                 setChangeGenre2={setChangeGenre2}
@@ -54,7 +66,7 @@ function App() {
             }
           />
           <Route
-            path="/pagefilm"
+            path="/pagewish/pagefilm"
             element={
               <PageFilm
                 changeGenre={changeGenre}
@@ -67,6 +79,7 @@ function App() {
             }
           />
           <Route path="/banner" element={<Banner />} />
+          <Route path="*" element={<PageError />} />
         </Routes>
       </BrowserRouter>
       <Footer />
