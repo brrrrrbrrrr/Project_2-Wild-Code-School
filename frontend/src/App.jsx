@@ -29,7 +29,7 @@ function App() {
       .then((res) => {
         setGenre(res.data.genres);
       });
-  }, [genres]);
+  }, []);
   return (
     <div className="App">
       <Navbar

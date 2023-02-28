@@ -31,7 +31,7 @@ function Banner() {
       });
   }, []);
   const trailer = movieVideo.find((vid) => vid.name === "Official Trailer");
-  console.log(trailer);
+  console.log(movieVideo);
   return (
     <div className="banner-container">
       <div className="backdrop-img-container">
@@ -40,7 +40,7 @@ function Banner() {
           src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
         />
       </div>
-      {/* <YouTube videoId={trailer.key} />; */}
+      {trailer ? <YouTube videoId={trailer?.key} /> : null}
       <div className="item-description-container">
         <div className="image-title-container">
           <div className="poster-img-container">
