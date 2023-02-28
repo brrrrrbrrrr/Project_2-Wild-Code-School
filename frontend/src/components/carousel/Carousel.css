@@ -9,3 +9,7 @@
   border: 1px solid var(--primary-color);
   background: black;
 }
+
+.no-poster {
+  margin-top: 50%;
+}

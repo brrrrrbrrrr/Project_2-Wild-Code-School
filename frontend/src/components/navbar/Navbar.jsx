@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import logo from "../../assets/Logo_FeelMotion_sans_texte.png";
 import wishesArray from "../envie/Wishes";
 import WishNav from "../envie/WishNav";
@@ -9,6 +10,7 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [burgerBar, setBurgerBar] = useState("burger-bar unclicked");
+  const [choiceNav, setChoiceNav] = useState("");
   const array = wishesArray;
 
   const toggleNav = () => {
@@ -19,6 +21,10 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
     } else {
       setBurgerBar("burger-bar clicked");
     }
+  };
+
+  const handleChangeNav = (newMood) => {
+    setChoiceNav(newMood);
   };
 
   useEffect(() => {
@@ -46,7 +52,7 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
             <li>
               <ul className="menu">
                 <li>
-                  <p className="items">Envie</p>
+                  <p className="items">Envie {choiceNav}</p>
                   <ul className="sousmenu">
                     {array.map((item) => (
                       <WishNav
@@ -56,6 +62,9 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
                         setChangeGenre={setChangeGenre}
                         key={item.id}
                         wish={item}
+                        choiceNav={choiceNav}
+                        setChoiceNav={setChoiceNav}
+                        handleChangeNav={handleChangeNav}
                       />
                     ))}
                   </ul>

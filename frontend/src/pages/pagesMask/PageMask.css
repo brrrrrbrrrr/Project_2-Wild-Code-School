@@ -37,16 +37,19 @@
     grid-row-gap: 10px;
   }
 
-  .div1 {
+  .divmask1 {
     grid-area: 1 / 1 / 2 / 2;
   }
-  .div2 {
+
+  .divmask2 {
     grid-area: 1 / 2 / 2 / 3;
   }
-  .div3 {
+
+  .divmask3 {
     grid-area: 2 / 1 / 3 / 2;
   }
-  .div4 {
+
+  .divmask4 {
     grid-area: 2 / 2 / 3 / 3;
   }
 
