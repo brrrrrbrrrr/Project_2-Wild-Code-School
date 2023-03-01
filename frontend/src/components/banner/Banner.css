@@ -10,6 +10,18 @@
   font-size: 5vw;
   text-align: justify;
   padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.no-item-overview {
+  color: white;
+  width: 70%;
+  font-size: 5vw;
+  text-align: justify;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .item-title {
@@ -134,5 +146,8 @@
   }
   .button {
     width: 5%;
+  }
+  .no-item-overview {
+    font-size: 1.8vw;
   }
 }

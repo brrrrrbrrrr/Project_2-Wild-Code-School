@@ -14,6 +14,7 @@ import YouTube from "react-youtube";
 import button from "../../assets/images/button.png";
 import Plateform from "../plateform/Plateform";
 import PageError from "../../pages/pageError/PageError";
+import error from "../../assets/projection_mobile.mp4";
 
 <meta
   httpEquiv="Feature-Policy"
@@ -44,8 +45,9 @@ function Banner() {
         setMovieVideo(response.data.videos.results);
       });
   }, []);
-  console.log(item);
+
   const trailer = movieVideo.find((vid) => vid.name === "Official Trailer");
+  console.log(movieVideo);
 
   return (
     <div className="banner-container">
@@ -65,10 +67,24 @@ function Banner() {
       <div className="item-description-container">
         <div className="image-title-container">
           <div className="poster-img-container">
-            <img
-              className="poster-img"
-              src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-            />
+            {item.poster_path !== null ? (
+              <img
+                className="poster-img"
+                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+              />
+            ) : (
+              <video
+                // width="640"
+                // height="480"
+                autoPlay
+                muted
+                loop
+                className="poster-img"
+              >
+                <source src={error} type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+            )}
           </div>
           <div className="item-title-container">
             <h1 className="item-title">{item.title}</h1>
@@ -81,7 +97,7 @@ function Banner() {
           {item.overview !== "" ? (
             <p className="item-overview">{item.overview}</p>
           ) : (
-            <p>Indisponible</p>
+            <p className="no-item-overview">Indisponible</p>
           )}
         </article>
         <div />

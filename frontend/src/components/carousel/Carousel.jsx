@@ -22,6 +22,7 @@ function Carousel({ changeGenre, setItem }) {
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
+
   const navigate = useNavigate();
 
   useEffect(() => {

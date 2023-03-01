@@ -39,6 +39,7 @@ function App() {
       setLoader(false);
     }, 3000);
   }, []);
+
   return loader ? (
     <TransitionAccueil />
   ) : (
