@@ -32,7 +32,7 @@ function App() {
       .then((res) => {
         setGenre(res.data.genres);
       });
-  }, [genres]);
+  }, []);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
