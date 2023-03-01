@@ -45,6 +45,7 @@ function Carousel({ changeGenre, setItem }) {
   return (
     <div>
       <Swiper
+        key={nextpage}
         slidesPerView={3}
         spaceBetween={10}
         pagination={{
