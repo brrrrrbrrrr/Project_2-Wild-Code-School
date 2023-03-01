@@ -49,7 +49,6 @@ function App() {
         genres={genres}
         changeGenre2={changeGenre2}
       />
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PageMask />} />
