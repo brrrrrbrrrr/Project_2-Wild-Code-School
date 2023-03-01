@@ -21,7 +21,7 @@ function Wish({ wish, setChangeGenre2, setChangeGenre, genres }) {
     // Permet d'affecter une class a chaque ID de mon tableau//
 
     <article className={`div${wish.id}`}>
-      <Link to="pagefilm">
+      <Link to="/pagewish/pagefilm">
         <button
           className="button-wish"
           type="button"
