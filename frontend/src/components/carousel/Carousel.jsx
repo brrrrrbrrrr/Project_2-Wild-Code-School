@@ -55,6 +55,7 @@ function Carousel({ changeGenre, setItem }) {
   return (
     <div>
       <Swiper
+        zoom
         key={nextpage}
         slidesPerView={3}
         spaceBetween={10}
@@ -84,16 +85,16 @@ function Carousel({ changeGenre, setItem }) {
           Plus de choix
         </button>
         {movies.map((item) => (
-          <div key={item.id} className="carousel-container">
+          <div key={item.id} className="carousel-container ">
             <SwiperSlide
-              className="mySwiperSlide"
+              className="mySwiperSlide "
               swiperslide={item}
               key={item.id}
               onClick={() => handleClick(item)}
             >
               {item.poster_path ? (
                 <img
-                  className="item-carousel-img"
+                  className="item-carousel-img swiper-zoom-container"
                   src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                   alt={item.title}
                 />
