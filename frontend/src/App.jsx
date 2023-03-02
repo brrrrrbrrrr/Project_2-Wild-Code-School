@@ -13,7 +13,7 @@ import Banner from "./components/banner/Banner";
 import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 import PageMask from "./pages/pagesMask/PageMask";
-
+import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil";
 // eslint-disable-next-line no-unused-vars
 
 // eslint-disable-next-line import/no-unresolved
@@ -23,6 +23,16 @@ function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
   const [genres, setGenre] = useState([]);
+  const [loader, setLoader] = useState(true);
+
+  // useEffect du TransitionAccueil loader
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
+    return clearTimeout();
+  }, []);
+
   useEffect(() => {
     axios
       .get(
@@ -33,7 +43,9 @@ function App() {
       });
   }, [genres]);
 
-  return (
+  return loader ? (
+    <TransitionAccueil />
+  ) : (
     <div className="App">
       <Navbar
         setChangeGenre={setChangeGenre}
