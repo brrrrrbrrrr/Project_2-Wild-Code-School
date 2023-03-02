@@ -69,7 +69,7 @@ function Carousel({ changeGenre, setItem }) {
       />
       <Swiper
         zoom
-        key={nextpage}
+        key={state.nextpage}
         slidesPerView={3}
         spaceBetween={10}
         pagination={{
@@ -95,7 +95,7 @@ function Carousel({ changeGenre, setItem }) {
         }}
       >
         <button className="nextpage-btn" onClick={handleClickGenre}>
-          Plus de choix
+          Page suivante
         </button>
         <div className="page-number">
           <p>Page : {state.nextpage}</p>

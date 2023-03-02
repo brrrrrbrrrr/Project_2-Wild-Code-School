@@ -19,5 +19,6 @@
   left: 50%;
   margin-top: 1%;
   text-transform: uppercase;
-  text-decoration: overline;
+
+  font-size: 1.2vw;
 }
