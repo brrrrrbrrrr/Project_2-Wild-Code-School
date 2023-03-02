@@ -109,6 +109,10 @@
   margin: 5vh;
   font-size: 5vw;
 }
+
+.vote-average {
+  text-transform: uppercase;
+}
 /* ------------------- Vidéo youtube --------------------- */
 .video-container iframe {
   position: absolute;

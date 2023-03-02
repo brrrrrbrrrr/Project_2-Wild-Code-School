@@ -21,6 +21,7 @@ import error from "../../assets/projection_mobile.mp4";
   content="accelerometer 'none'; gyroscope 'none'; picture-in-picture 'none'; clipboard-write 'none'; encrypted-media 'none'; autoplay 'none'"
 />;
 
+// Propriété de style pour mon composant youtube
 const opts = {
   height: "390",
   width: "640",
@@ -28,26 +29,37 @@ const opts = {
     autoplay: 0,
   },
 };
+
+// Me permet d'aller directement de ma page carousel a mon composant banner, sans faire passer tous les props
 function Banner() {
   const navigate = useNavigate();
   const { state } = useLocation();
   const { item } = state;
+
+  // Me permet de revenir sur la page précedente
   const goBack = () => {
     navigate(-1);
   };
+
+  // Je recupere le tableau de vidéo correspondant a l'id du film
   const [movieVideo, setMovieVideo] = useState([]);
+  const [ratingVideo, setRatingVideo] = useState();
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${item.id}?api_key=b57a315f37e6b92bd78f45a87f99afa6&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/${item.id}?api_key=b57a315f37e6b92bd78f45a87f99afa6&append_to_response=videos,review`
       )
       .then((response) => {
         setMovieVideo(response.data.videos.results);
+        setRatingVideo(response.data.vote_average);
+        console.log(response.data);
       });
   }, []);
 
-  const trailer = movieVideo.find((vid) => vid.name === "Official Trailer");
-  console.log(movieVideo);
+  // Je cherche dans mon tableau les élements qui m'interesse
+  const trailer = movieVideo.find(
+    (vid) => vid.name === "Official Trailer" || vid.name === "Trailer"
+  );
 
   return (
     <div className="banner-container">
@@ -73,14 +85,7 @@ function Banner() {
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
               />
             ) : (
-              <video
-                // width="640"
-                // height="480"
-                autoPlay
-                muted
-                loop
-                className="poster-img"
-              >
+              <video autoPlay muted loop className="poster-img">
                 <source src={error} type="video/mp4" />
                 Votre navigateur ne supporte pas la vidéo.
               </video>
@@ -93,6 +98,9 @@ function Banner() {
         </div>
 
         <article className="synopsis-container">
+          <div>
+            <p className="vote-average"> Vote average : {ratingVideo}</p>
+          </div>
           <h2 className="synopsis-title">Synopsis</h2>
           {item.overview !== "" ? (
             <p className="item-overview">{item.overview}</p>
