@@ -13,3 +13,18 @@
 .no-poster {
   margin-top: 50%;
 }
+
+.page-number {
+  position: relative;
+  left: 50%;
+  margin-top: 1%;
+  text-transform: uppercase;
+
+  font-size: 4vw;
+}
+
+@media screen and (min-width: 768px) {
+  .page-number {
+    font-size: 1.2vw;
+  }
+}

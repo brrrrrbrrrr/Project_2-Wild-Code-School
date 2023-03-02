@@ -145,7 +145,6 @@ nav {
 
 .menu li:hover .sousmenu {
   display: block;
-
 }
 
 @media screen and (max-width: 940px) {
