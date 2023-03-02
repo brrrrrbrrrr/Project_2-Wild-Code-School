@@ -1,7 +1,6 @@
 /* ----------RESPONSIVE VERSION MOBILE------------ */
 
-@media screen and (max-width:360px) {
-
+@media screen and (max-width: 360px) {
   .logo-container {
     display: flex;
     align-items: center;
@@ -31,8 +30,7 @@
 
 /* ----------RESPONSIVE VERSION TABLETTE------------ */
 
-@media screen and (min-width:361px) {
-
+@media screen and (min-width: 361px) {
   .logo-container {
     display: flex;
     align-items: center;
@@ -62,8 +60,7 @@
 
 /* ----------RESPONSIVE VERSION DESKTOP------------ */
 
-@media screen and (min-width:992px) {
-
+@media screen and (min-width: 992px) {
   .logo-container {
     display: flex;
     align-items: center;

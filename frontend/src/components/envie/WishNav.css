@@ -1,0 +1,11 @@
+p {
+  color: #fcd24f;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 940px) {
+  p {
+
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
