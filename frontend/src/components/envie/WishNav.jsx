@@ -4,14 +4,19 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import React from "react";
+import "./WishNav.css";
 
 function WishNav({
   wish,
   setChangeGenre2,
   setChangeGenre,
   genres,
-  handleChangeNav,
+  setChoiceNav,
 }) {
+  const handleChangeNav = (newMood) => {
+    setChoiceNav(newMood);
+  };
+
   function handleClickNav() {
     setChangeGenre2(genres[wish.choice2]);
     setChangeGenre(genres[wish.choice]);

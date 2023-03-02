@@ -24,10 +24,6 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
     }
   };
 
-  const handleChangeNav = (newMood) => {
-    setChoiceNav(newMood);
-  };
-
   const handleClick = () => {
     window.location.href = "#footer-section";
     setToggleMenu(!toggleMenu);
@@ -76,7 +72,6 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
                         wish={item}
                         choiceNav={choiceNav}
                         setChoiceNav={setChoiceNav}
-                        handleChangeNav={handleChangeNav}
                       />
                     ))}
                   </ul>

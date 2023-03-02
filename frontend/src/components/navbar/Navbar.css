@@ -86,10 +86,9 @@ nav {
   width: 100%;
 }
 
-.menu li a:link,
-.menu li a:visited {
+.menu li:link,
+.menu li:visited {
   display: block;
-  color: #fff;
   background: #293245;
   padding: 6px 10px;
   border-right: 1px solid #fff;
@@ -131,15 +130,15 @@ nav {
   border-right: 1px solid transparent;
 }
 
-.menu .sousmenu li a:link,
-.menu li a:visited {
+.menu .sousmenu li:link,
+.menu li:visited {
   display: block;
-  color: #fff;
+  color: #fcd24f;
   text-decoration: none;
   background-color: #808080;
 }
 
-.menu .sousmenu li a:hover {
+.menu .sousmenu li:hover {
   background-color: #199bd2;
   cursor: pointer;
 }

@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 // Import Swiper React components
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-
+import arrowTitle from "../../assets/arrow_title.png";
+import camera from "../../assets/camera.png";
 import Carousel from "../../components/carousel/Carousel";
 
 // eslint-disable-next-line import/no-unresolved
@@ -29,12 +30,22 @@ export default function PageFilm({ changeGenre, changeGenre2, setItem }) {
   ) : (
     <div className="carousels-container">
       <div className="first-carousel">
-        <h1 className="genre-title">{changeGenre.name}</h1>
+        <div className="title-camera">
+          <h1 className="genre-title">{changeGenre.name}</h1>
+          <div className="img-wrapper">
+            <img src={camera} alt="camera" className="camera" />
+          </div>
+        </div>
         <Carousel changeGenre={changeGenre} setItem={setItem} />
       </div>
 
       <div className="second-carousel" />
-      <h1 className="genre-title">{changeGenre2.name}</h1>
+      <div className="title-camera">
+        <h1 className="genre-title">{changeGenre2.name}</h1>
+        <div className="img-wrapper">
+          <img src={camera} alt="camera" className="camera" />
+        </div>
+      </div>
       <Carousel changeGenre={changeGenre2} setItem={setItem} />
     </div>
   );
