@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "./Navbar.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import logo from "../../assets/Logo_FeelMotion_sans_texte.png";
@@ -25,6 +26,17 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
 
   const handleChangeNav = (newMood) => {
     setChoiceNav(newMood);
+  };
+
+  const handleClick = () => {
+    window.location.href = "#footer-section";
+    setToggleMenu(!toggleMenu);
+
+    if (toggleMenu) {
+      setBurgerBar("burger-bar unclicked");
+    } else {
+      setBurgerBar("burger-bar clicked");
+    }
   };
 
   useEffect(() => {
@@ -72,7 +84,14 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
               </ul>
             </li>
             <li className="items">favoris</li>
-            <li className="items">contact</li>
+            <li
+              className="items"
+              id="#footer-section"
+              onClick={handleClick}
+              role="presentation"
+            >
+              contact
+            </li>
           </ul>
         </nav>
       )}
