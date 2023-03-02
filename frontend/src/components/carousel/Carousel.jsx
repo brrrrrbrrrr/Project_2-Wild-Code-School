@@ -22,6 +22,7 @@ function Carousel({ changeGenre, setItem }) {
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
+  const [actualGenre, setActualGenre] = useState(changeGenre);
 
   const navigate = useNavigate();
 
@@ -37,6 +38,15 @@ function Carousel({ changeGenre, setItem }) {
         console.warn(error);
       });
   }, [changeGenre, nextpage]);
+
+  useEffect(() => {
+    setActualGenre(changeGenre);
+    setNextpage(1); // réinitialiser la page lorsque vous changez de genre
+  }, [changeGenre]);
+
+  function handleClickGenre() {
+    setNextpage(nextpage + 1);
+  }
 
   function handleClick(item) {
     navigate("/banner", { state: { item } });
@@ -70,10 +80,7 @@ function Carousel({ changeGenre, setItem }) {
           },
         }}
       >
-        <button
-          className="nextpage-btn"
-          onClick={() => setNextpage(nextpage + 1)}
-        >
+        <button className="nextpage-btn" onClick={handleClickGenre}>
           Plus de choix
         </button>
         {movies.map((item) => (
