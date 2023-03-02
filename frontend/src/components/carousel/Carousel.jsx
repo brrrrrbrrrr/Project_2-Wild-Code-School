@@ -22,6 +22,8 @@ function Carousel({ changeGenre, setItem }) {
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
+  const [actualGenre, setActualGenre] = useState(changeGenre);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,6 +39,15 @@ function Carousel({ changeGenre, setItem }) {
       });
   }, [changeGenre, nextpage]);
 
+  useEffect(() => {
+    setActualGenre(changeGenre);
+    setNextpage(1); // réinitialiser la page lorsque vous changez de genre
+  }, [changeGenre]);
+
+  function handleClickGenre() {
+    setNextpage(nextpage + 1);
+  }
+
   function handleClick(item) {
     navigate("/banner", { state: { item } });
   }
@@ -44,6 +55,8 @@ function Carousel({ changeGenre, setItem }) {
   return (
     <div>
       <Swiper
+        zoom
+        key={nextpage}
         slidesPerView={3}
         spaceBetween={10}
         pagination={{
@@ -68,24 +81,20 @@ function Carousel({ changeGenre, setItem }) {
           },
         }}
       >
-        <button
-          className="nextpage-btn"
-          onClick={() => setNextpage(nextpage + 1)}
-        >
+        <button className="nextpage-btn" onClick={handleClickGenre}>
           Plus de choix
         </button>
         {movies.map((item) => (
-          <div className="carousel-container">
+          <div key={item.id} className="carousel-container ">
             <SwiperSlide
-              className="mySwiperSlide"
-              key={item.id}
+              className="mySwiperSlide "
               swiperslide={item}
-              // onClick={() => }
+              key={item.id}
               onClick={() => handleClick(item)}
             >
               {item.poster_path ? (
                 <img
-                  className="item-carousel-img"
+                  className="item-carousel-img swiper-zoom-container"
                   src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                   alt={item.title}
                 />

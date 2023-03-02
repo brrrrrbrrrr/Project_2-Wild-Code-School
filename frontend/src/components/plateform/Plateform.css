@@ -1,0 +1,30 @@
+.plateform-full-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.plateform-column {
+  width: 20%;
+}
+
+.plateform-img {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+}
+
+.no-plateform {
+  color: white;
+  width: 100%;
+  font-size: 5vw;
+  text-align: justify;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .no-plateform {
+    font-size: 1.8vw;
+  }
+}

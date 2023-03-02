@@ -39,17 +39,19 @@ function App() {
       setLoader(false);
     }, 3000);
   }, []);
+
   return loader ? (
     <TransitionAccueil />
   ) : (
     <div className="App">
-      <Navbar
-        setChangeGenre={setChangeGenre}
-        setChangeGenre2={setChangeGenre2}
-        genres={genres}
-        changeGenre2={changeGenre2}
-      />
       <BrowserRouter>
+        <Navbar
+          setChangeGenre={setChangeGenre}
+          setChangeGenre2={setChangeGenre2}
+          genres={genres}
+          changeGenre2={changeGenre2}
+        />
+
         <Routes>
           <Route path="/" element={<PageMask />} />
           <Route
