@@ -1,11 +1,31 @@
 .button-plateform {
   display: flex;
   flex-direction: row;
-  margin-bottom: 3%;
-  width: 50%;
+  transition: all 250ms linear;
+  width: 30%;
+  justify-content: center;
+  color: var(--primary-color);
+  background-color: black;
+  align-items: center;
+  cursor: pointer;
+  border: 1px yellow solid;
+  margin: 2% 5%;
+  border-radius: 5px;
+  padding: 1%;
 }
 
 .plateform-btn-container {
   display: flex;
-  width: 50%;
+  width: 100%;
+}
+
+.button-plateform:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .button-plateform {
+    font-size: 2vw;
+  }
 }

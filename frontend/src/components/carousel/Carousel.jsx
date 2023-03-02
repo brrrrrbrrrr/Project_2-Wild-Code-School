@@ -38,7 +38,7 @@ function Carousel({ changeGenre, setItem }) {
   useEffect(() => {
     // const urlApi = `${url}?api_key=${key}&${optionApi}${state.nextpage}${average}${optionGenre}${state.actualGenre.id}&with_watch_providers=8`;
     const urlApi = `${url}?api_key=${key}&${optionApi}${average}${optionGenre}${state.actualGenre.id}${provider}${providerChoice}${region}${page}${state.nextpage}`;
-    // console.log(urlApi);
+
     axios
       .get(urlApi)
       .then((response) => {
@@ -51,8 +51,8 @@ function Carousel({ changeGenre, setItem }) {
 
   useEffect(() => {
     setState({ nextpage: 1, actualGenre: changeGenre }); // réinitialiser la page lorsque vous changez de genre
-  }, [changeGenre]);
-
+  }, [changeGenre, providerChoice]);
+  // console.log("page :", state.nextpage);
   function handleClickGenre() {
     setState({ ...state, nextpage: state.nextpage + 1 });
   }

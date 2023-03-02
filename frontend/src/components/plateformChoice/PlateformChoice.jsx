@@ -30,9 +30,9 @@ function PlateformChoice({ setProviderChoice, providerChoice }) {
     (plat) =>
       plat.provider_name === "Netflix" ||
       plat.provider_name === "Apple TV" ||
-      plat.provider_name === "Amazon Prime Video" ||
+      (plat.provider_name === "Amazon Prime Video" &&
+        plat.provider_id === 119) ||
       plat.provider_name === "Canal+" ||
-      plat.provider_name === "BINGE" ||
       plat.provider_name === "Google Play Movies" ||
       plat.provider_name === "Disney plus"
   );
