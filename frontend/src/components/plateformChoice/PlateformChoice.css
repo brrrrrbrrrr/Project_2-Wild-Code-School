@@ -1,0 +1,11 @@
+.button-plateform {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  width: 50%;
+}
+
+.plateform-btn-container {
+  display: flex;
+  width: 50%;
+}

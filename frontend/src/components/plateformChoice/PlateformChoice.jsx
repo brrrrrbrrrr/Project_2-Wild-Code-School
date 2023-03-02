@@ -1,9 +1,12 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./PlateformChoice.css";
 
-function PlateformChoice() {
+function PlateformChoice({ setProviderChoice, providerChoice }) {
   const [plateformArrayApi, setPlateformArrayApi] = useState([]);
   useEffect(() => {
     axios
@@ -14,6 +17,7 @@ function PlateformChoice() {
         setPlateformArrayApi(res.data.results);
       });
   }, []);
+
   const platArray = plateformArrayApi.filter(
     (plat) =>
       plat.display_priority === 0 ||
@@ -22,8 +26,34 @@ function PlateformChoice() {
       plat.display_priority === 3
   );
 
-  // console.log(platArray);
-  return <div />;
+  const myPlateformArray = platArray.filter(
+    (plat) =>
+      plat.provider_name === "Netflix" ||
+      plat.provider_name === "Apple TV" ||
+      plat.provider_name === "Amazon Prime Video" ||
+      plat.provider_name === "Canal+" ||
+      plat.provider_name === "BINGE" ||
+      plat.provider_name === "Google Play Movies" ||
+      plat.provider_name === "Disney plus"
+  );
+
+  function handleClick(item) {
+    setProviderChoice(item.provider_id);
+  }
+
+  return (
+    <div className="plateform-btn-container">
+      {myPlateformArray.map((item) => (
+        <button
+          onClick={() => handleClick(item)}
+          className="button-plateform"
+          key={item.id}
+        >
+          {item.provider_name}
+        </button>
+      ))}
+    </div>
+  );
 }
 
 export default PlateformChoice;

@@ -20,7 +20,11 @@ function Carousel({ changeGenre, setItem }) {
   const key = import.meta.env.VITE_API_KEY;
   const optionApi = import.meta.env.VITE_API_OPTION_DEFAULT_PAGE;
   const optionGenre = import.meta.env.VITE_API_OPTION_GENRE;
+  const region = import.meta.env.VITE_API_REGION;
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
+  const page = import.meta.env.VITE_API_PAGE;
+  const provider = import.meta.env.VITE_API_PROVIDER_OPTION;
+  const [providerChoice, setProviderChoice] = useState();
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
   // const [actualGenre, setActualGenre] = useState(changeGenre);
@@ -32,8 +36,9 @@ function Carousel({ changeGenre, setItem }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const urlApi = `${url}?api_key=${key}&${optionApi}${state.nextpage}${average}${optionGenre}${state.actualGenre.id}`;
-    // console.log(state);
+    // const urlApi = `${url}?api_key=${key}&${optionApi}${state.nextpage}${average}${optionGenre}${state.actualGenre.id}&with_watch_providers=8`;
+    const urlApi = `${url}?api_key=${key}&${optionApi}${average}${optionGenre}${state.actualGenre.id}${provider}${providerChoice}${region}${page}${state.nextpage}`;
+    // console.log(urlApi);
     axios
       .get(urlApi)
       .then((response) => {
@@ -42,7 +47,7 @@ function Carousel({ changeGenre, setItem }) {
       .catch((error) => {
         console.warn(error);
       });
-  }, [state]);
+  }, [state, providerChoice]);
 
   useEffect(() => {
     setState({ nextpage: 1, actualGenre: changeGenre }); // réinitialiser la page lorsque vous changez de genre
@@ -55,9 +60,13 @@ function Carousel({ changeGenre, setItem }) {
   function handleClick(item) {
     navigate("/banner", { state: { item } });
   }
-
+  // console.log(providerChoice);
   return (
     <div>
+      <PlateformChoice
+        setProviderChoice={setProviderChoice}
+        providerChoice={providerChoice}
+      />
       <Swiper
         zoom
         key={nextpage}
@@ -88,7 +97,7 @@ function Carousel({ changeGenre, setItem }) {
         <button className="nextpage-btn" onClick={handleClickGenre}>
           Plus de choix
         </button>
-        <PlateformChoice />
+
         {movies.map((item) => (
           <div key={item.id} className="carousel-container ">
             <SwiperSlide
