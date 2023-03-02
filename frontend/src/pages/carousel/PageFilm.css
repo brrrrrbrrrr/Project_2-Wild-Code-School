@@ -58,9 +58,41 @@ body {
   height: 50px;
 }
 
+.title-camera {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+  /* opacity: 0;
+  z-index: -10; */
+  width: 0%;
+}
+
+.camera {
+  align-self: center;
+  width: 30%;
+}
+
 
 @media screen and (min-width: 768px) {
   .genre-title {
     font-size: 2vw;
+  }
+
+  .camera {
+    opacity: 1;
+  }
+
+  .img-wrapper {
+    /* opacity: 1;
+z-index: 10; */
+    width: 30%;
   }
 }

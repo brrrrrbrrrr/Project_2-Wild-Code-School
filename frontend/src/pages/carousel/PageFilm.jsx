@@ -30,13 +30,22 @@ export default function PageFilm({ changeGenre, changeGenre2, setItem }) {
   ) : (
     <div className="carousels-container">
       <div className="first-carousel">
-        <h1 className="genre-title">{changeGenre.name}</h1>
-        {/* <img src={camera} alt="" /> */}
+        <div className="title-camera">
+          <h1 className="genre-title">{changeGenre.name}</h1>
+          <div className="img-wrapper">
+            <img src={camera} alt="camera" className="camera" />
+          </div>
+        </div>
         <Carousel changeGenre={changeGenre} setItem={setItem} />
       </div>
 
       <div className="second-carousel" />
-      <h1 className="genre-title">{changeGenre2.name}</h1>
+      <div className="title-camera">
+        <h1 className="genre-title">{changeGenre2.name}</h1>
+        <div className="img-wrapper">
+          <img src={camera} alt="camera" className="camera" />
+        </div>
+      </div>
       <Carousel changeGenre={changeGenre2} setItem={setItem} />
     </div>
   );
