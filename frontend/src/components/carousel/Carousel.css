@@ -13,3 +13,11 @@
 .no-poster {
   margin-top: 50%;
 }
+
+.page-number {
+  position: relative;
+  left: 50%;
+  margin-top: 1%;
+  text-transform: uppercase;
+  text-decoration: overline;
+}

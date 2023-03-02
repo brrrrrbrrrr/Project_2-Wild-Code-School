@@ -97,6 +97,9 @@ function Carousel({ changeGenre, setItem }) {
         <button className="nextpage-btn" onClick={handleClickGenre}>
           Plus de choix
         </button>
+        <div className="page-number">
+          <p>Page : {state.nextpage}</p>
+        </div>
 
         {movies.map((item) => (
           <div key={item.id} className="carousel-container ">
