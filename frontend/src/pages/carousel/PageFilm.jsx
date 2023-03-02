@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // Import Swiper React components
 
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -13,9 +13,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "./PageFilm.css";
+import Loading from "../Loading";
 
 export default function PageFilm({ changeGenre, changeGenre2, setItem }) {
-  return (
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 4000);
+  }, []);
+
+  return !loading ? (
+    <Loading />
+  ) : (
     <div className="carousels-container">
       <div className="first-carousel">
         <h1 className="genre-title">{changeGenre.name}</h1>
