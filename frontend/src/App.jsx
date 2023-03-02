@@ -18,7 +18,7 @@ import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil"
 // eslint-disable-next-line no-unused-vars
 
 // eslint-disable-next-line import/no-unresolved
-import Footer from "./components/footer/footer";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
@@ -32,7 +32,7 @@ function App() {
       .then((res) => {
         setGenre(res.data.genres);
       });
-  }, [genres]);
+  }, []);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
