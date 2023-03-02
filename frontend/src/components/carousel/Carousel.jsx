@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
@@ -8,7 +9,7 @@ import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 import { SwiperSlide, Swiper } from "swiper/react";
-
+import PlateformChoice from "../plateformChoice/PlateformChoice";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -87,6 +88,7 @@ function Carousel({ changeGenre, setItem }) {
         <button className="nextpage-btn" onClick={handleClickGenre}>
           Plus de choix
         </button>
+        <PlateformChoice />
         {movies.map((item) => (
           <div key={item.id} className="carousel-container ">
             <SwiperSlide
