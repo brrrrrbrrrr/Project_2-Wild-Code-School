@@ -27,6 +27,12 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
   const handleClick = () => {
     window.location.href = "#footer-section";
     setToggleMenu(!toggleMenu);
+
+    if (toggleMenu) {
+      setBurgerBar("burger-bar unclicked");
+    } else {
+      setBurgerBar("burger-bar clicked");
+    }
   };
 
   useEffect(() => {
