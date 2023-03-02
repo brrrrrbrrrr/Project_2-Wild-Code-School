@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import React from "react";
+import { React } from "react";
 import "./Wish.css";
 import { Link } from "react-router-dom";
 

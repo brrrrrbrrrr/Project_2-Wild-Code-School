@@ -17,7 +17,6 @@ h1 {
 
 .projector-container {
   position: relative;
-
 }
 
 .ray {
@@ -81,7 +80,6 @@ h1 {
   100% {
     opacity: 0.1;
   }
-
 }
 
 .spectator {
@@ -100,7 +98,6 @@ h1 {
 }
 
 @media screen and (max-width: 940px) {
-
   .animation {
     display: none;
   }

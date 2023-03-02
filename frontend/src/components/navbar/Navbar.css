@@ -79,7 +79,6 @@ nav {
   list-style: none;
   /* padding: 10px;
   margin: 30px; */
-
 }
 
 .menu li {
@@ -90,22 +89,20 @@ nav {
 .menu li a:link,
 .menu li a:visited {
   display: block;
-  color: #FFF;
+  color: #fff;
   background: #293245;
   padding: 6px 10px;
-  border-right: 1px solid #FFF;
+  border-right: 1px solid #fff;
   text-align: center;
   text-decoration: none;
 }
 
 .menu li p:hover {
-  background-color: #199BD2;
-
+  background-color: #199bd2;
 }
 
 .menu li:active {
   background-color: #808080;
-
 }
 
 .menu .sousmenu {
@@ -124,7 +121,6 @@ nav {
   margin-right: 30px;
   cursor: pointer;
   font-size: 16px;
-
 }
 
 .menu .sousmenu li {
@@ -138,13 +134,13 @@ nav {
 .menu .sousmenu li a:link,
 .menu li a:visited {
   display: block;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   background-color: #808080;
 }
 
 .menu .sousmenu li a:hover {
-  background-color: #199BD2;
+  background-color: #199bd2;
   cursor: pointer;
 }
 
@@ -152,14 +148,12 @@ nav {
   display: block;
 }
 
-
 @media screen and (max-width: 940px) {
   header {
     height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
   }
 
   nav {
@@ -197,7 +191,6 @@ nav {
     text-align: center;
     text-shadow: 1px 1px 1px #fcd24f, 0 0 black;
   }
-
 
   .menu .sousmenu {
     bottom: 120px;

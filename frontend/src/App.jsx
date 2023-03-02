@@ -17,7 +17,7 @@ import PageMask from "./pages/pagesMask/PageMask";
 // eslint-disable-next-line no-unused-vars
 
 // eslint-disable-next-line import/no-unresolved
-import Footer from "./components/footer/footer";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
@@ -41,7 +41,6 @@ function App() {
         genres={genres}
         changeGenre2={changeGenre2}
       />
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PageMask />} />

@@ -10,7 +10,7 @@ function PageMask() {
     setTimeout(() => {
       setLoader(false);
     }, 3000);
-    // clearTimeout(loader);
+    return clearTimeout();
   }, []);
   return loader ? (
     <TransitionAccueil />
