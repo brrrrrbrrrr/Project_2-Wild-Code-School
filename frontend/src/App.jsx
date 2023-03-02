@@ -44,6 +44,12 @@ function App() {
     <TransitionAccueil />
   ) : (
     <div className="App">
+      <Navbar
+        setChangeGenre={setChangeGenre}
+        setChangeGenre2={setChangeGenre2}
+        genres={genres}
+        changeGenre2={changeGenre2}
+      />
       <BrowserRouter>
         <Navbar
           setChangeGenre={setChangeGenre}

@@ -1,6 +1,8 @@
 footer {
   padding: 50px 0;
   background: #000;
+  scroll-behavior: smooth;
+  height: 100vh;
 }
 
 .footer-section-logo img {
