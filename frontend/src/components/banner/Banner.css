@@ -10,6 +10,18 @@
   font-size: 5vw;
   text-align: justify;
   padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.no-item-overview {
+  color: white;
+  width: 70%;
+  font-size: 5vw;
+  text-align: justify;
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .item-title {
@@ -90,6 +102,35 @@
   cursor: pointer;
   margin: 10%;
 }
+.title-plateform {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-style: italic;
+  margin: 5vh;
+  font-size: 5vw;
+}
+
+.vote-average {
+  text-transform: uppercase;
+}
+/* ------------------- Vidéo youtube --------------------- */
+.video-container iframe {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 100%;
+  height: 50%;
+  border: 1px white solid;
+}
+
+.video-container {
+  position: absolute;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio   */
+  height: 0;
+
+  width: 60%;
+  height: 30%;
+}
 
 @media screen and (min-width: 768px) {
   .item-title {
@@ -104,7 +145,13 @@
   .image-title-container {
     height: 20rem;
   }
+  .title-plateform {
+    font-size: 3vw;
+  }
   .button {
     width: 5%;
+  }
+  .no-item-overview {
+    font-size: 1.8vw;
   }
 }
