@@ -22,13 +22,17 @@ function Carousel({ changeGenre, setItem }) {
   const average = import.meta.env.VITE_API_OPTION_AVERAGE;
   const [movies, setMovies] = useState([]);
   const [nextpage, setNextpage] = useState(1);
-  const [actualGenre, setActualGenre] = useState(changeGenre);
+  // const [actualGenre, setActualGenre] = useState(changeGenre);
+  const [state, setState] = useState({
+    nextpage: 1,
+    actualGenre: changeGenre,
+  });
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const urlApi = `${url}?api_key=${key}&${optionApi}${nextpage}${average}${optionGenre}${changeGenre.id}`;
-
+    const urlApi = `${url}?api_key=${key}&${optionApi}${state.nextpage}${average}${optionGenre}${state.actualGenre.id}`;
+    // console.log(state);
     axios
       .get(urlApi)
       .then((response) => {
@@ -37,15 +41,14 @@ function Carousel({ changeGenre, setItem }) {
       .catch((error) => {
         console.warn(error);
       });
-  }, [changeGenre, nextpage]);
+  }, [state]);
 
   useEffect(() => {
-    setActualGenre(changeGenre);
-    setNextpage(1); // réinitialiser la page lorsque vous changez de genre
+    setState({ nextpage: 1, actualGenre: changeGenre }); // réinitialiser la page lorsque vous changez de genre
   }, [changeGenre]);
 
   function handleClickGenre() {
-    setNextpage(nextpage + 1);
+    setState({ ...state, nextpage: state.nextpage + 1 });
   }
 
   function handleClick(item) {
