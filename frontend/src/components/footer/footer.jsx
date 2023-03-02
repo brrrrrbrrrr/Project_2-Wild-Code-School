@@ -1,11 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import "./footer.css";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import logo from "../../assets/logofooter.png";
 
 function Footer() {
   return (
-    <footer>
+    <footer id="footer-section">
       <div className="footer-section-logo">
         <img src={logo} alt="" />
       </div>
