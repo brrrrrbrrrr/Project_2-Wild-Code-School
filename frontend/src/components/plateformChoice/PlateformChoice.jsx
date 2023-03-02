@@ -8,6 +8,7 @@ import "./PlateformChoice.css";
 
 function PlateformChoice({ setProviderChoice, providerChoice }) {
   const [plateformArrayApi, setPlateformArrayApi] = useState([]);
+
   useEffect(() => {
     axios
       .get(
@@ -46,7 +47,9 @@ function PlateformChoice({ setProviderChoice, providerChoice }) {
       {myPlateformArray.map((item) => (
         <button
           onClick={() => handleClick(item)}
-          className="button-plateform"
+          className={`button-plateform ${
+            providerChoice === item.provider_id ? "selected" : ""
+          }`}
           key={item.id}
         >
           {item.provider_name}
