@@ -68,7 +68,7 @@ function Carousel({ changeGenre, setItem }) {
       />
       <Swiper
         zoom
-        key={state.nextpage}
+        key={`${state.nextpage}-${state.actualGenre.id}`}
         slidesPerView={3}
         spaceBetween={10}
         pagination={{
