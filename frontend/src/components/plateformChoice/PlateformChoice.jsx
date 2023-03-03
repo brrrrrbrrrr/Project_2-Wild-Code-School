@@ -50,7 +50,7 @@ function PlateformChoice({ setProviderChoice, providerChoice }) {
           className={`button-plateform ${
             providerChoice === item.provider_id ? "selected" : ""
           }`}
-          key={item.id}
+          key={item.provider_id}
         >
           {item.provider_name}
         </button>
