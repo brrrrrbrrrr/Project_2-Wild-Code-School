@@ -89,9 +89,9 @@ function App() {
           />
           <Route path="/banner" element={<Banner />} />
           <Route path="*" element={<PageError />} />
+          <Route path="/footer" element={<Footer />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

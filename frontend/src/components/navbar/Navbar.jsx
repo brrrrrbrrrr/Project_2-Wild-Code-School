@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -24,16 +25,16 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
     }
   };
 
-  const handleClick = () => {
-    window.location.href = "#footer-section";
-    setToggleMenu(!toggleMenu);
+  // const handleClick = () => {
+  //   window.location.href = "#footer-section";
+  //   setToggleMenu(!toggleMenu);
 
-    if (toggleMenu) {
-      setBurgerBar("burger-bar unclicked");
-    } else {
-      setBurgerBar("burger-bar clicked");
-    }
-  };
+  //   if (toggleMenu) {
+  //     setBurgerBar("burger-bar unclicked");
+  //   } else {
+  //     setBurgerBar("burger-bar clicked");
+  //   }
+  // };
 
   useEffect(() => {
     const changeWidth = () => {
@@ -79,14 +80,17 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
               </ul>
             </li>
             <li className="items">favoris</li>
-            <li
-              className="items"
-              id="#footer-section"
-              onClick={handleClick}
-              role="presentation"
-            >
-              contact
-            </li>
+            <Link to="/footer">
+              <li
+                className="items"
+                id="#footer-section"
+                // onClick={handleClick}
+
+                role="presentation"
+              >
+                contact
+              </li>
+            </Link>
           </ul>
         </nav>
       )}
