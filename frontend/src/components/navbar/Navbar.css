@@ -178,6 +178,7 @@ nav {
     backdrop-filter: blur(50px);
     top: 0px;
     z-index: 100;
+    position: fixed;
   }
 
   .list-items {
