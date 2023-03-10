@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+
+.titre-mask {
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 60px;
+  margin-bottom: 30px;
+}
+
+.mask-page {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.mask-full {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .mask-full {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .divmask1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .divmask2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .divmask3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .divmask4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .titre-mask {
+    font-size: 38px;
+    margin-bottom: 15px;
+  }
+
+  .mask-description {
+    font-size: 30px;
+  }
+}

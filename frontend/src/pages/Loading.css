@@ -1,0 +1,17 @@
+.movie-clapper-animation {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  transform: scale(2);
+}
+
+.clapper-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media screen and (min-width: 1024px) {
+  .movie-clapper-animation {
+    transform: scale(1);
+  }
+}

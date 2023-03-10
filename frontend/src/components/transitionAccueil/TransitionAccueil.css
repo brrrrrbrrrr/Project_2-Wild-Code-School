@@ -1,0 +1,89 @@
+/* ----------RESPONSIVE VERSION MOBILE------------ */
+
+@media screen and (max-width: 360px) {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 60%;
+    margin-top: 20vh;
+    animation: fondu 3s ease-in-out;
+  }
+
+  @keyframes fondu {
+    from {
+      transform: scale(0.7);
+      filter: blur(5px);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+}
+
+/* ----------RESPONSIVE VERSION TABLETTE------------ */
+
+@media screen and (min-width: 361px) {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 40%;
+    margin-top: 8vh;
+    animation: fondu 3s ease-in-out;
+  }
+
+  @keyframes fondu {
+    from {
+      transform: scale(0.7);
+      filter: blur(5px);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+}
+
+/* ----------RESPONSIVE VERSION DESKTOP------------ */
+
+@media screen and (min-width: 992px) {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 20%;
+    margin-top: 15vh;
+    animation: fondu 3s ease-in-out;
+  }
+
+  @keyframes fondu {
+    from {
+      transform: scale(0.7);
+      filter: blur(5px);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+}

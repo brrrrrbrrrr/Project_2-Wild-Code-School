@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+
+#app {
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: black;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.genre-title {
+  background-image: url("../../assets/arrow_title.png");
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 262px;
+  margin: 3%;
+  padding: auto;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-size: 5vw;
+  padding-left: 2%;
+  color: black;
+  height: 50px;
+}
+
+.title-camera {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+
+  width: 0%;
+}
+
+.camera {
+  align-self: center;
+  width: 15%;
+}
+
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .genre-title {
+    font-size: 2vw;
+  }
+
+  .camera {
+    opacity: 1;
+  }
+
+  .img-wrapper {
+    /* opacity: 1;
+z-index: 10; */
+    width: 30%;
+  }
+
+  .swiper-slide .swiper-zoom-container:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s linear;
+  }
+}

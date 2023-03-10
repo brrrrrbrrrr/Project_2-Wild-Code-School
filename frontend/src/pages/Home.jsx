@@ -1,36 +1,16 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import React, { useState, useEffect } from "react";
+import "./Home.css";
+import TransitionAccueil from "../components/transitionAccueil/TransitionAccueil";
 
-export default function Home() {
-  return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
+function Home() {
+  const [loader, setLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 5000);
+  }, []);
 
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
-  );
+  return loader ? <TransitionAccueil /> : <div className="Home">Home</div>;
 }
+
+export default Home;

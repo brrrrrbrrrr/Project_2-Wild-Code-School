@@ -1,0 +1,109 @@
+.pageError {
+  background-color: antiquewhite;
+}
+
+h1 {
+  z-index: 30;
+  text-align: center;
+  padding: 10px;
+  color: black;
+}
+
+.animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projector-container {
+  position: relative;
+}
+
+.ray {
+  position: absolute;
+  z-index: 15;
+  width: 1400px;
+  height: 562px;
+  top: -135px;
+  left: -110px;
+  animation: wiggle 1s infinite linear;
+  filter: blur(5px);
+}
+
+.projectorTop {
+  width: 42px;
+  height: 42px;
+  top: 38px;
+  left: 87px;
+}
+
+.projectorTop2 {
+  width: 32px;
+  height: 32px;
+  top: 47px;
+  left: 50px;
+}
+
+.projectorTop2,
+.projectorTop {
+  animation: tourne 5s infinite linear;
+  position: absolute;
+}
+
+@keyframes tourne {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    opacity: 0.1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  75% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.spectator {
+  position: absolute;
+  width: 200px;
+  z-index: 10;
+  transform: translateY(50%) translateX(-40%);
+}
+
+.screen {
+  transform: translateX(40%);
+}
+
+.screenMobile {
+  display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .animation {
+    display: none;
+  }
+
+  .screenMobile {
+    display: block;
+    width: 100%;
+  }
+}
