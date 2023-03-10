@@ -46,11 +46,11 @@ function PlateformChoice({ setProviderChoice, providerChoice }) {
     <div className="plateform-btn-container">
       {myPlateformArray.map((item) => (
         <button
+          key={item.provider_id}
           onClick={() => handleClick(item)}
           className={`button-plateform ${
             providerChoice === item.provider_id ? "selected" : ""
           }`}
-          key={item.provider_id}
         >
           {item.provider_name}
         </button>

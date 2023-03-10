@@ -24,6 +24,7 @@ function App() {
   const [changeGenre2, setChangeGenre2] = useState("");
   const [genres, setGenre] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [maskChoice, setMaskChoice] = useState(null);
 
   // useEffect du TransitionAccueil loader
   useEffect(() => {
@@ -58,10 +59,17 @@ function App() {
           setChangeGenre2={setChangeGenre2}
           genres={genres}
           changeGenre2={changeGenre2}
+          maskChoice={maskChoice}
+          setMaskChoice={setMaskChoice}
         />
 
         <Routes>
-          <Route path="/" element={<PageMask />} />
+          <Route
+            path="/"
+            element={
+              <PageMask maskChoice={maskChoice} setMaskChoice={setMaskChoice} />
+            }
+          />
           <Route
             path="/pagewish"
             element={
