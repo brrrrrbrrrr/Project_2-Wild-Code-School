@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 
 import "./Navbar.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
+
 import logo from "../../assets/Logo_FeelMotion_sans_texte.png";
 import wishesArray from "../envie/Wishes";
 import WishNav from "../envie/WishNav";
@@ -90,7 +93,7 @@ function Navbar({
               <ul className="menu">
                 <li>
                   <p className="items">Envie {choiceNav}</p>
-                  <ul className="sousmenu sousmenu-wish">
+                  <ul className="sousmenu sousmenu-wish" onClick={toggleNav}>
                     {array.map((item) => (
                       <WishNav
                         genres={genres}
@@ -107,7 +110,6 @@ function Navbar({
                 </li>
               </ul>
             </li>
-            <li className="items">favoris</li>
             <li
               className="items"
               id="#footer-section"
