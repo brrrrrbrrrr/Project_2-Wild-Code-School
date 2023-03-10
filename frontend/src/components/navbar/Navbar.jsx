@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 
 import "./Navbar.css";
@@ -5,9 +6,20 @@ import "./Navbar.css";
 import logo from "../../assets/Logo_FeelMotion_sans_texte.png";
 import wishesArray from "../envie/Wishes";
 import WishNav from "../envie/WishNav";
+import MaskNav from "../emotion/MaskNav";
+import Page2Array from "../Page2Array";
 
 // eslint-disable-next-line react/prop-types
-function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
+function Navbar({
+  changeGenre2,
+  genres,
+  setChangeGenre,
+  // eslint-disable-next-line react/prop-types
+  setChangeGenre2,
+  maskChoice,
+  // eslint-disable-next-line react/prop-types
+  setMaskChoice,
+}) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [burgerBar, setBurgerBar] = useState("burger-bar unclicked");
@@ -56,12 +68,29 @@ function Navbar({ changeGenre2, genres, setChangeGenre, setChangeGenre2 }) {
           </div>
           <ul className="list-items">
             <li className="items">accueil</li>
-            <li className="items">à propos</li>
+            <li>
+              <ul className="menu">
+                <li>
+                  <li className="items">{maskChoice ? "" : "Humeurs"} </li>
+
+                  <img className="maskhumeurs" src={maskChoice} alt="" />
+                  <ul className="sousmenu-humeurs sousmenu">
+                    {Page2Array.map((item) => (
+                      <MaskNav
+                        setMaskChoice={setMaskChoice}
+                        key={item.id}
+                        item={item}
+                      />
+                    ))}
+                  </ul>
+                </li>
+              </ul>
+            </li>
             <li>
               <ul className="menu">
                 <li>
                   <p className="items">Envie {choiceNav}</p>
-                  <ul className="sousmenu">
+                  <ul className="sousmenu sousmenu-wish">
                     {array.map((item) => (
                       <WishNav
                         genres={genres}
