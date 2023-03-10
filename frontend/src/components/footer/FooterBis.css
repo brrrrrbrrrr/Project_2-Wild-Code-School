@@ -1,0 +1,18 @@
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-btn {
+  all: initial;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: "Barlow Condensed", sans-serif;
+  cursor: pointer;
+  display: flex;
+  margin: 3%;
+  font-weight: 700;
+  font-size: 4vh;
+}

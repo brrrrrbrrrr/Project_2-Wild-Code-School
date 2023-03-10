@@ -2,13 +2,17 @@ footer {
   padding: 50px 0;
   background: #000;
   scroll-behavior: smooth;
-  height: 100vh;
 }
 
+.footer-section-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .footer-section-logo img {
   margin: 0 auto;
   width: 350px;
-  justify-content: center;
+  padding: 10% 0px;
 }
 
 .footer_socials {

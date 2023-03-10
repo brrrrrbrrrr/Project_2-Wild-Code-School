@@ -40,17 +40,6 @@ function Navbar({
     }
   };
 
-  // const handleClick = () => {
-  //   window.location.href = "#footer-section";
-  //   setToggleMenu(!toggleMenu);
-
-  //   if (toggleMenu) {
-  //     setBurgerBar("burger-bar unclicked");
-  //   } else {
-  //     setBurgerBar("burger-bar clicked");
-  //   }
-  // };
-
   useEffect(() => {
     const changeWidth = () => {
       setWidth(window.innerWidth);
@@ -112,14 +101,8 @@ function Navbar({
               </ul>
             </li>
 
-            <Link to="/footer">
-              <li
-                className="items"
-                id="#footer-section"
-                // onClick={handleClick}
-
-                role="presentation"
-              >
+            <Link to="/contact">
+              <li className="items" id="#footer-section" role="presentation">
                 contact
               </li>
             </Link>

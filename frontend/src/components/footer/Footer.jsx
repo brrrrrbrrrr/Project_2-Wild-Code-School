@@ -1,15 +1,10 @@
 import React from "react";
 import "./Footer.css";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-import logo from "../../assets/logofooter.png";
 
 function Footer() {
   return (
     <footer id="footer-section">
-      <div className="footer-section-logo">
-        <img src={logo} alt="" />
-      </div>
-
       <div className="footer_socials">
         <a href="https://www.facebook.com/people/Cin%C3%A9-Feelmotion/100090610116113/">
           <FaFacebookF />
