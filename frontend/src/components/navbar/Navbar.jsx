@@ -111,7 +111,7 @@ function Navbar({
                 </li>
               </ul>
             </li>
-            <li className="items">favoris</li>
+
             <Link to="/footer">
               <li
                 className="items"
