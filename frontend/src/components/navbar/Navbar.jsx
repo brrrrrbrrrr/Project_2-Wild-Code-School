@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -39,16 +40,16 @@ function Navbar({
     }
   };
 
-  const handleClick = () => {
-    window.location.href = "#footer-section";
-    setToggleMenu(!toggleMenu);
+  // const handleClick = () => {
+  //   window.location.href = "#footer-section";
+  //   setToggleMenu(!toggleMenu);
 
-    if (toggleMenu) {
-      setBurgerBar("burger-bar unclicked");
-    } else {
-      setBurgerBar("burger-bar clicked");
-    }
-  };
+  //   if (toggleMenu) {
+  //     setBurgerBar("burger-bar unclicked");
+  //   } else {
+  //     setBurgerBar("burger-bar clicked");
+  //   }
+  // };
 
   useEffect(() => {
     const changeWidth = () => {
@@ -110,14 +111,18 @@ function Navbar({
                 </li>
               </ul>
             </li>
-            <li
-              className="items"
-              id="#footer-section"
-              onClick={handleClick}
-              role="presentation"
-            >
-              contact
-            </li>
+
+            <Link to="/footer">
+              <li
+                className="items"
+                id="#footer-section"
+                // onClick={handleClick}
+
+                role="presentation"
+              >
+                contact
+              </li>
+            </Link>
           </ul>
         </nav>
       )}
