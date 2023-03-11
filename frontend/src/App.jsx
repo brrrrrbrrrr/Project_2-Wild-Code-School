@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
+import PageContact from "./components/contact/PageContact";
 import PageError from "./pages/pageError/PageError";
 import Navbar from "./components/navbar/Navbar";
 import Banner from "./components/banner/Banner";
@@ -14,10 +15,8 @@ import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 import PageMask from "./pages/pagesMask/PageMask";
 import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil";
+import FooterBis from "./components/footer/FooterBis";
 // eslint-disable-next-line no-unused-vars
-
-// eslint-disable-next-line import/no-unresolved
-import Footer from "./components/footer/Footer";
 
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
@@ -97,8 +96,9 @@ function App() {
           />
           <Route path="/banner" element={<Banner />} />
           <Route path="*" element={<PageError />} />
-          <Route path="/footer" element={<Footer />} />
+          <Route path="/contact" element={<PageContact />} />
         </Routes>
+        <FooterBis />
       </BrowserRouter>
     </div>
   );
