@@ -64,7 +64,7 @@ function App() {
 
         <Routes>
           <Route
-            path="/accueil"
+            path="/"
             element={
               <PageMask maskChoice={maskChoice} setMaskChoice={setMaskChoice} />
             }
