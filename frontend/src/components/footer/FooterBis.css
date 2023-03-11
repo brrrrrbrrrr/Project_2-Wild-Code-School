@@ -1,7 +1,9 @@
 .contact-container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
 }
 
 .contact-btn {
@@ -15,4 +17,11 @@
   margin: 3%;
   font-weight: 700;
   font-size: 4vh;
+}
+
+.footer_copyright {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: "Barlow Condensed", sans-serif;
+  padding: 0 5px;
 }

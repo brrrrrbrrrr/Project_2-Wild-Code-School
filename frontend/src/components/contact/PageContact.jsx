@@ -5,8 +5,8 @@ import "./PageContact.css";
 
 function PageContact() {
   return (
-    <div>
-      <Footer />
+    <div className="pagecontact-container">
+      <Footer className="footer-components" />
       <div className="footer-section-logo">
         <img src={logo} alt="" />
       </div>

@@ -102,7 +102,12 @@ function Navbar({
             </li>
 
             <Link to="/contact">
-              <li className="items" id="#footer-section" role="presentation">
+              <li
+                className="items"
+                id="#footer-section"
+                onClick={toggleNav}
+                role="presentation"
+              >
                 contact
               </li>
             </Link>

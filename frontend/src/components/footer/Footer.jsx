@@ -16,14 +16,10 @@ function Footer() {
           <FaInstagram />
         </a>
       </div>
-      <div className="footer_contactemail">
-        <p className="email">Contact : FEELMOTION.WCD@GMAIL.COM</p>
-      </div>
-      <div className="footer_copyright">
-        <p className="copyright">
-          &copy; Copyright {new Date().getFullYear()} | FeelMotion.com | All
-          Rights Reserved
-        </p>
+      <div className="contact-footer-container">
+        <div className="footer_contactemail">
+          <p className="email">Contact : FEELMOTION.WCD@GMAIL.COM</p>
+        </div>
       </div>
     </footer>
   );
