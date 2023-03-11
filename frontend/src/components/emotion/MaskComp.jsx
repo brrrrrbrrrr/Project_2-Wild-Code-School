@@ -4,12 +4,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MaskComp.css";
 
-function MaskComp({ mask }) {
+// eslint-disable-next-line react/prop-types
+function MaskComp({ mask, setMaskChoice }) {
+  function handleClick() {
+    setMaskChoice(mask.img);
+  }
   return (
     <article className={`divmask${mask.id}`}>
       <div className="mask">
         <Link to="/pagewish">
-          <img className="mask-img" src={mask.img} alt={mask.name} />
+          <img
+            onClick={handleClick}
+            className="mask-img"
+            src={mask.img}
+            alt={mask.name}
+            role="presentation"
+          />
           <h3 className="mask-description">{mask.desc}</h3>
         </Link>
       </div>

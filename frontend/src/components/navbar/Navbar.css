@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Barlow Condensed", sans-serif;
   font-family: "Inter", sans-serif;
@@ -13,8 +12,7 @@ body {
   color: #fcd24f;
 }
 
-.items,
-.small-items {
+.items {
   list-style-type: none;
   text-decoration: none;
   font-size: 20px;
@@ -24,6 +22,10 @@ body {
   text-transform: uppercase;
   margin-right: 30px;
   cursor: pointer;
+}
+
+.stylemasknav {
+  width: 50px;
 }
 
 .logo-navbar {
@@ -60,7 +62,6 @@ nav {
   display: flex;
   gap: 5px;
 }
-
 .logo-container {
   align-items: center;
 }
@@ -75,15 +76,7 @@ nav {
 }
 
 .menu {
-  /* height: 60px; */
   list-style: none;
-  /* padding: 10px;
-  margin: 30px; */
-}
-
-.menu li {
-  float: left;
-  width: 100%;
 }
 
 .menu li:link,
@@ -110,6 +103,7 @@ nav {
   padding: 0;
   margin: 0;
   position: absolute;
+  right: 10%;
   list-style-type: none;
   text-decoration: none;
   font-size: 20px;
@@ -120,6 +114,7 @@ nav {
   margin-right: 30px;
   cursor: pointer;
   font-size: 16px;
+  z-index: 999;
 }
 
 .menu .sousmenu li {
@@ -138,7 +133,7 @@ nav {
   background-color: #808080;
 }
 
-.menu .sousmenu li:hover {
+.menu .sousmenu li a:hover {
   background-color: #199bd2;
   cursor: pointer;
 }
@@ -146,6 +141,13 @@ nav {
 .menu li:hover .sousmenu {
   display: block;
 }
+
+/* NavBar Sous menu Masque*/
+.maskhumeurs {
+  width: 50px;
+}
+
+/* NavBar Sous menu Masque*/
 
 @media screen and (max-width: 940px) {
   header {
@@ -158,15 +160,14 @@ nav {
   nav {
     padding: 0;
   }
-
   .toggle-mobile {
     display: block;
   }
-
   nav {
-    position: absolute;
+    position: fixed;
+    object-fit: cover;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     justify-content: center;
     background-color: rgba(35, 32, 32, 0.2);
@@ -178,6 +179,7 @@ nav {
     backdrop-filter: blur(50px);
     top: 0px;
     z-index: 100;
+    position: fixed;
   }
 
   .list-items {
@@ -186,18 +188,29 @@ nav {
   }
 
   .items {
-    margin: 35px 0;
+    margin: 50px 0;
+
     text-align: center;
     text-shadow: 1px 1px 1px #fcd24f, 0 0 black;
   }
 
-  .menu .sousmenu {
-    bottom: 120px;
-    left: 140px;
+  .menu .sousmenu-humeurs {
+    right: 35%;
+
+    top: 100px;
     width: 115px;
     font-size: 14px;
-
     border-radius: 0 5px 5px 0;
+    position: absolute;
+  }
+
+  .menu .sousmenu-wish {
+    bottom: 75px;
+    width: 115px;
+    font-size: 14px;
+    border-radius: 0 5px 5px 0;
+
+    position: absolute;
   }
 
   .logo-title {

@@ -36,7 +36,6 @@ function Carousel({ changeGenre, setItem }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const urlApi = `${url}?api_key=${key}&${optionApi}${state.nextpage}${average}${optionGenre}${state.actualGenre.id}&with_watch_providers=8`;
     const urlApi = `${url}?api_key=${key}&${optionApi}${average}${optionGenre}${state.actualGenre.id}${provider}${providerChoice}${region}${page}${state.nextpage}`;
 
     axios
@@ -69,7 +68,7 @@ function Carousel({ changeGenre, setItem }) {
       />
       <Swiper
         zoom
-        key={state.nextpage}
+        key={`${state.nextpage}-${state.actualGenre.id}`}
         slidesPerView={3}
         spaceBetween={10}
         pagination={{

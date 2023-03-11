@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
+import PageContact from "./components/contact/PageContact";
 import PageError from "./pages/pageError/PageError";
 import Navbar from "./components/navbar/Navbar";
 import Banner from "./components/banner/Banner";
@@ -14,16 +15,15 @@ import PageWish from "./pages/pagewish/PageWish";
 import PageFilm from "./pages/carousel/PageFilm";
 import PageMask from "./pages/pagesMask/PageMask";
 import TransitionAccueil from "./components/transitionAccueil/TransitionAccueil";
+import FooterBis from "./components/footer/FooterBis";
 // eslint-disable-next-line no-unused-vars
-
-// eslint-disable-next-line import/no-unresolved
-import Footer from "./components/footer/Footer";
 
 function App() {
   const [changeGenre, setChangeGenre] = useState("");
   const [changeGenre2, setChangeGenre2] = useState("");
   const [genres, setGenre] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [maskChoice, setMaskChoice] = useState(null);
 
   // useEffect du TransitionAccueil loader
   useEffect(() => {
@@ -58,10 +58,17 @@ function App() {
           setChangeGenre2={setChangeGenre2}
           genres={genres}
           changeGenre2={changeGenre2}
+          maskChoice={maskChoice}
+          setMaskChoice={setMaskChoice}
         />
 
         <Routes>
-          <Route path="/" element={<PageMask />} />
+          <Route
+            path="/accueil"
+            element={
+              <PageMask maskChoice={maskChoice} setMaskChoice={setMaskChoice} />
+            }
+          />
           <Route
             path="/pagewish"
             element={
@@ -89,9 +96,10 @@ function App() {
           />
           <Route path="/banner" element={<Banner />} />
           <Route path="*" element={<PageError />} />
+          <Route path="/contact" element={<PageContact />} />
         </Routes>
+        <FooterBis />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
