@@ -60,7 +60,7 @@ function Navbar({
             <p className="logo-title">feel motion</p>
           </div>
           <ul className="list-items">
-            <Link to="/accueil">
+            <Link to="/">
               <li className="items">accueil</li>
             </Link>
             <li>
