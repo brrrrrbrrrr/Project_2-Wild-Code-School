@@ -5,7 +5,14 @@ import "./PageWish.css";
 import wishesArray from "../../components/envie/Wishes";
 import Wish from "../../components/envie/Wish";
 
-function PageWish({ genres, setChangeGenre2, setChangeGenre, changeGenre2 }) {
+function PageWish({
+  genres,
+  setChangeGenre2,
+  setChangeGenre,
+  changeGenre2,
+  choiceNav,
+  setChoiceNav,
+}) {
   return (
     <section className="page-wishes">
       <h2 className="wish-title">Que voulez-vous ressentir ?</h2>
@@ -18,6 +25,8 @@ function PageWish({ genres, setChangeGenre2, setChangeGenre, changeGenre2 }) {
             setChangeGenre={setChangeGenre}
             key={item.id}
             wish={item}
+            choiceNav={choiceNav}
+            setChoiceNav={setChoiceNav}
           />
         ))}
       </div>
