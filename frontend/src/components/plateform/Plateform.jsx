@@ -12,7 +12,7 @@ function Plateform(item) {
         `https://api.themoviedb.org/3/movie/${item.item.id}/watch/providers?api_key=b57a315f37e6b92bd78f45a87f99afa6`
       )
       .then((response) => {
-        if (response?.data?.results?.FR !== undefined) {
+        if (response?.data?.results?.FR !== null) {
           setPlateform(response.data.results.FR.flatrate);
         }
       });

@@ -8,9 +8,9 @@
   background-color: black;
   align-items: center;
   cursor: pointer;
-  border: 1px yellow solid;
+  border: 1px white solid;
   margin: 2% 5%;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 1%;
 }
 
@@ -20,8 +20,7 @@
 }
 
 .button-plateform:hover {
-  color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.5);
+  scale: 1.1;
 }
 
 @media screen and (max-width: 768px) {
@@ -32,5 +31,13 @@
 
 .selected {
   color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.unselected {
+  color: initial;
+  background-color: initial;
 }
