@@ -25,7 +25,7 @@ export default function PageFilm({ changeGenre, changeGenre2, setItem }) {
     }, 4000);
   }, []);
 
-  return loading ? (
+  return !loading ? (
     <Loading />
   ) : (
     <div className="carousels-container">
