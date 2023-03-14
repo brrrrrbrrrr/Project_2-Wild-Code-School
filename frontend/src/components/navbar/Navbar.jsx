@@ -23,11 +23,13 @@ function Navbar({
   maskChoice,
   // eslint-disable-next-line react/prop-types
   setMaskChoice,
+  choiceNav,
+  setChoiceNav,
 }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
   const [burgerBar, setBurgerBar] = useState("burger-bar unclicked");
-  const [choiceNav, setChoiceNav] = useState("");
+
   const array = wishesArray;
 
   const toggleNav = () => {

@@ -24,6 +24,7 @@ function App() {
   const [genres, setGenre] = useState([]);
   const [loader, setLoader] = useState(true);
   const [maskChoice, setMaskChoice] = useState(null);
+  const [choiceNav, setChoiceNav] = useState("");
 
   // useEffect du TransitionAccueil loader
   useEffect(() => {
@@ -60,6 +61,8 @@ function App() {
           changeGenre2={changeGenre2}
           maskChoice={maskChoice}
           setMaskChoice={setMaskChoice}
+          choiceNav={choiceNav}
+          setChoiceNav={setChoiceNav}
         />
 
         <Routes>
@@ -78,6 +81,8 @@ function App() {
                 changeGenre2={changeGenre2}
                 genres={genres}
                 setGenre={setGenre}
+                choiceNav={choiceNav}
+                setChoiceNav={setChoiceNav}
               />
             }
           />
