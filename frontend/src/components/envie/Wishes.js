@@ -29,14 +29,14 @@ const wishesArray = [
   },
   {
     name: "Effrayé",
-    desc: "J'ai envie d'être effrayé !",
+    desc: "J'ai envie d'être effrayé·e !",
     id: 5,
     choice: 10,
     choice2: 16,
   },
   {
     name: "Transporté",
-    desc: "J'ai envie d'être transporté !",
+    desc: "J'ai envie d'être transporté·e !",
     id: 6,
     choice: 14,
     choice2: 8,
