@@ -30,16 +30,21 @@ function PlateformChoice({ setProviderChoice, providerChoice }) {
   const myPlateformArray = platArray.filter(
     (plat) =>
       plat.provider_name === "Netflix" ||
-      plat.provider_name === "Apple TV" ||
       (plat.provider_name === "Amazon Prime Video" &&
         plat.provider_id === 119) ||
       plat.provider_name === "Canal+" ||
-      plat.provider_name === "Google Play Movies" ||
       plat.provider_name === "Disney plus"
   );
 
   function handleClick(item) {
-    setProviderChoice(item.provider_id);
+    if (item.provider_id === providerChoice) {
+      // Si le bouton déjà sélectionné est cliqué de nouveau, on enlève la classe "selected"
+      // et on remet le state "providerChoice" à null
+      setProviderChoice(null);
+    } else {
+      // Sinon, on met à jour le state "providerChoice" avec l'id du bouton cliqué
+      setProviderChoice(item.provider_id);
+    }
   }
 
   return (

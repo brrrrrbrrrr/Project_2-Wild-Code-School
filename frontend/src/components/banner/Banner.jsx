@@ -52,7 +52,7 @@ function Banner() {
       .then((response) => {
         setMovieVideo(response.data.videos.results);
         setRatingVideo(response.data.vote_average);
-        console.log(response.data);
+        console.log("item :", item);
       });
   }, []);
 
