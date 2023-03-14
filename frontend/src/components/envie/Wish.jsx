@@ -5,10 +5,11 @@ import { React } from "react";
 import "./Wish.css";
 import { Link } from "react-router-dom";
 
-function Wish({ wish, setChangeGenre2, setChangeGenre, genres }) {
+function Wish({ wish, setChangeGenre2, setChangeGenre, genres, setChoiceNav }) {
   function handleClick() {
     setChangeGenre2(genres[wish.choice2]);
     setChangeGenre(genres[wish.choice]);
+    setChoiceNav(wish.desc);
   }
 
   return (
