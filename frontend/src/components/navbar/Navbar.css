@@ -209,7 +209,7 @@ nav {
 
   .menu .sousmenu-wish {
     bottom: 75px;
-    width: 115px;
+    width: auto;
     font-size: 14px;
     border-radius: 0 5px 5px 0;
 
