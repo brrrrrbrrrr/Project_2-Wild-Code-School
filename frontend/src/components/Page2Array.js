@@ -12,14 +12,14 @@ const Page2Array = [
   },
   {
     img: maskangry,
-    name: "Masque Énervé",
-    desc: "Énervé",
+    name: "Masque Énervé·e",
+    desc: "Énervé·e",
     id: 2,
   },
   {
     img: maskflip,
-    name: "Masque Flippé",
-    desc: "Flippé",
+    name: "Masque Angoissé·e",
+    desc: "Angoissé·e",
     id: 3,
   },
   {
