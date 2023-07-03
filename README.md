@@ -1,3 +1,7 @@
+## Infos
+This is my second project at Wild Code School (front-end with an API).
+I used REACT.
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
